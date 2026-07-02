@@ -3,7 +3,7 @@
   "pages": [
     {
       "name": "index.html",
-      "editableElements": "body,\nsection:attr(style),\n.eyebrow:attr(style),\nh1:attr(style),\np:attr(style),\nimg:attr(style)",
+      "editableElements": "body,\n:is(h1, p, a, img, .eyebrow):attr(style)",
       "sharedSections": ".site-header, .site-footer"
     },
     {
