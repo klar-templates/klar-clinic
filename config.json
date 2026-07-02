@@ -1,0 +1,15 @@
+{
+  "pageTypes": [],
+  "pages": [
+    {
+      "name": "index.html",
+      "editableElements": "body,\nsection:attr(style),\n.eyebrow:attr(style),\nh1:attr(style),\np:attr(style),\nimg:attr(style)",
+      "sharedSections": ".site-header, .site-footer"
+    },
+    {
+      "name": "page-blank.html",
+      "editableElements": "main:htmlBlocks(styling:[\n  { selector: 'section, div, h1, h2, h3, p, button, a, span, time',\n    collection: 'classes',\n    categories: 'layout flexbox grid spacing typography colors-backgrounds borders effects Transforms transitions-animation  lists tables miscellaneous' },\n    { selector: 'img',                 collection: 'classes', categories: 'radius effects' },\n    { selector: 'root',                 collection: 'classes', categories: 'background-color' }\n]),"
+    }
+  ],
+  "vocabularies": {}
+}
