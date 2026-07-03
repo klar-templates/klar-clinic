@@ -1,5 +1,6 @@
 /* Design tokens */
-:root {
+:root,
+.light {
   --color-bg: #f6f4ef;
   --color-surface: #ffffff;
   --color-ink: #20302c;
