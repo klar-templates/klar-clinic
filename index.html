@@ -7,10 +7,8 @@
 
     <!-- Fonts present at first paint → no flicker. Preload URL must match the
        @font-face src exactly (both crossorigin) or the browser fetches twice. -->
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin
-      href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin="" href="https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin="" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2">
     <style>
       /* Fraunces — variable file, one latin subset covers 400–600 */
       @font-face {
@@ -48,8 +46,7 @@
           <a class="nav-link" href="/kontakt">Kontakt</a>
           <a class="nav__cta" href="/kontakt">Boka tid</a>
           <button class="theme-toggle" aria-label="Växla tema" title="Växla ljus/mörkt tema">
-            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="5"></circle>
               <line x1="12" y1="1" x2="12" y2="3"></line>
               <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -60,8 +57,7 @@
               <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
               <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
-            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
           </button>
@@ -69,11 +65,11 @@
       </div>
     </header>
     <main style="gap: 0px; padding: 0px">
-      <section class="hero">
+      <section class="hero dark bg-card">
         <div class="container hero__grid">
           <div>
             <span class="eyebrow">Trygg vård nära dig</span>
-            <h1 style="">Personlig vård med omtanke och tid för varje patient</h1>
+            <h1 style="" class="text-foreground">Personlig vård med omtanke och tid för varje patient</h1>
             <p class="hero__intro">
               Vårdkliniken Norden erbjuder modern och trygg vård med
               legitimerad personal. Hos oss möts du av lugn, kunskap och
@@ -87,9 +83,7 @@
             </div>
           </div>
           <div class="hero__media">
-            <img
-              src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixid=M3w5ODc2NzB8MHwxfHNlYXJjaHw2fHxjbGluaWN8ZW58MXx8fHwxNzgyOTAxMjU2fDA&amp;ixlib=rb-4.1.0&amp;w=1600&amp;q=80&amp;auto=format&amp;fit=crop"
-              alt="Ljus och välkomnande klinikmiljö" style="">
+            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixid=M3w5ODc2NzB8MHwxfHNlYXJjaHw2fHxjbGluaWN8ZW58MXx8fHwxNzgyOTAxMjU2fDA&amp;ixlib=rb-4.1.0&amp;w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="Ljus och välkomnande klinikmiljö" style="">
           </div>
         </div>
       </section>
@@ -129,9 +123,7 @@
           <div class="card-grid">
             <article class="card">
               <div class="card__media">
-                <img
-                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&amp;fit=crop&amp;w=1600&amp;q=80"
-                  alt="Hälsoundersökning">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Hälsoundersökning">
               </div>
               <div class="card__body">
                 <h3>Hälsoundersökning</h3>
@@ -147,9 +139,7 @@
             </article>
             <article class="card">
               <div class="card__media">
-                <img
-                  src="https://images.unsplash.com/photo-1584516150909-c43483ee7932?auto=format&amp;fit=crop&amp;w=1600&amp;q=80"
-                  alt="Vaccination">
+                <img src="https://images.unsplash.com/photo-1584516150909-c43483ee7932?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Vaccination">
               </div>
               <div class="card__body">
                 <h3>Vaccination</h3>
@@ -165,9 +155,7 @@
             </article>
             <article class="card">
               <div class="card__media">
-                <img
-                  src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&amp;fit=crop&amp;w=1600&amp;q=80"
-                  alt="Läkarbesök">
+                <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Läkarbesök">
               </div>
               <div class="card__body">
                 <h3>Läkarbesök</h3>
