@@ -1,10 +1,37 @@
-<!DOCTYPE html><html lang="sv"><head>
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vårdkliniken Norden</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <!-- Fonts present at first paint → no flicker. Preload URL must match the
+       @font-face src exactly (both crossorigin) or the browser fetches twice. -->
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2">
+
+    <style>
+      /* Fraunces — variable file, one latin subset covers 400–600 */
+      @font-face {
+        font-family: 'Fraunces';
+        font-style: normal;
+        font-weight: 400 600;
+        font-display: optional;
+        src: url(https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* Inter — variable file, one latin subset covers 400–600 */
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400 600;
+        font-display: optional;
+        src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+    </style>
     <link rel="stylesheet" href="/style.css">
     <link rel="icon" href="/images/favicon.png">
     <script type="module" src="/script.js"></script>
@@ -21,7 +48,8 @@
           <a class="nav-link" href="/kontakt">Kontakt</a>
           <a class="nav__cta" href="/kontakt">Boka tid</a>
           <button class="theme-toggle" aria-label="Växla tema" title="Växla ljus/mörkt tema">
-            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="5"></circle>
               <line x1="12" y1="1" x2="12" y2="3"></line>
               <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -32,7 +60,8 @@
               <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
               <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
-            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
           </button>
@@ -53,7 +82,9 @@
       <section class="section py-8">
         <div class="container about-grid">
           <div class="about__media">
-            <img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Vårt team på kliniken">
+            <img
+              src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&amp;fit=crop&amp;w=1600&amp;q=80"
+              alt="Vårt team på kliniken">
           </div>
           <div class="about__text">
             <h2>Vård som sätter människan främst</h2>
@@ -108,7 +139,9 @@
           <div class="team-grid">
             <div class="member">
               <div class="member__photo">
-                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Dr. Anna Lindqvist">
+                <img
+                  src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+                  alt="Dr. Anna Lindqvist">
               </div>
               <h3>Dr. Anna Lindqvist</h3>
               <div class="member__role">
@@ -117,7 +150,9 @@
             </div>
             <div class="member">
               <div class="member__photo">
-                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Erik Sandström">
+                <img
+                  src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+                  alt="Erik Sandström">
               </div>
               <h3>Erik Sandström</h3>
               <div class="member__role">
@@ -126,7 +161,9 @@
             </div>
             <div class="member">
               <div class="member__photo">
-                <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixid=M3w5ODc2NzB8MHwxfHNlYXJjaHwxMXx8ZG9jdG9yfGVufDF8fHx8MTc4MjY1NzYzM3ww&amp;ixlib=rb-4.1.0&amp;w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="Dr. Maria Holm">
+                <img
+                  src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixid=M3w5ODc2NzB8MHwxfHNlYXJjaHwxMXx8ZG9jdG9yfGVufDF8fHx8MTc4MjY1NzYzM3ww&amp;ixlib=rb-4.1.0&amp;w=1600&amp;q=80&amp;auto=format&amp;fit=crop"
+                  alt="Dr. Maria Holm">
               </div>
               <h3>Dr. Maria Holm</h3>
               <div class="member__role">
@@ -172,5 +209,6 @@
         </div>
       </div>
     </footer>
-  
-</body></html>
+
+  </body>
+</html>
