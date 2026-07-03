@@ -1,5 +1,10 @@
 {
-  "pageTypes": [],
+  "pageTypes": [
+    {
+      "name": "blog-post",
+      "editableElements": ".post__title:field(title:Titel, name:title, type:string, default:'Skriv en titel', order:1, section:Innehåll, sectionOrder:1),\n.post__image:field(title:Bild, name:image, type:image, default:{src:https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixid=M3w5ODc2NzB8MHwxfHNlYXJjaHw2fHxjbGluaWN8ZW58MXx8fHwxNzgyOTAxMjU2fDA&ixlib=rb-4.1.0&w=1600&q=80&auto=format&fit=crop,alt:asdf}, order:2, section:Innehåll),\n.post__category:field(title:Kategori, name:category, type:string, default:'Hälsa', order:3, col:6, section:Meta, sectionOrder:2, options(vocab:blog-categories)),\n.post__author:field(title:Författare, name:author, type:string, default:'Dr. Anna Lindgren', order:4, col:6, section:Meta, options(vocab:blog-authors)),\n.post__date:field(title:Publicerad, name:publishedAt, type:string, format:date, default:now, order:5, col:6, section:Meta),\n.post__readtime:field(title:Lästid, name:readTime, type:string, default:'5 min lästid', order:6, col:6, section:Meta),\n.post__lead:field(title:Ingress, name:lead, type:text, default:'Skriv en kort ingress som beskriver artikeln.', order:7, section:Innehåll, options(layout:editor)),\n.post__body:field(title:Text, name:body, type:array, order:8, section:Innehåll, options(layout:blocks)),\n:field(title:Taggar, name:tags, type:array, default:['hälsa'], order:9, col:6, section:Meta, options(vocab:blog-tags))"
+    }
+  ],
   "pages": [
     {
       "name": "index.html",
@@ -11,5 +16,28 @@
       "editableElements": "main:htmlBlocks(styling:[\n  { selector: 'section, div, h1, h2, h3, p, button, a, span, time',\n    collection: 'classes',\n    categories: 'layout flexbox grid spacing typography colors-backgrounds borders effects Transforms transitions-animation  lists tables miscellaneous' },\n    { selector: 'img',                 collection: 'classes', categories: 'radius effects' },\n    { selector: 'root',                 collection: 'classes', categories: 'background-color' }\n]),"
     }
   ],
-  "vocabularies": {}
+  "vocabularies": {
+    "blog-categories": [
+      "Hälsa",
+      "Vård",
+      "Forskning",
+      "Livsstil",
+      "Förebyggande"
+    ],
+    "blog-authors": [
+      "Dr. Anna Lindgren",
+      "Dr. Erik Berg",
+      "Sjuksköterska Lisa Andersson"
+    ],
+    "blog-tags": [
+      "hälsa",
+      "vård",
+      "forskning",
+      "livsstil",
+      "förebyggande",
+      "vaccination",
+      "kost",
+      "motion"
+    ]
+  }
 }
