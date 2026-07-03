@@ -85,22 +85,22 @@
         <div class="post__hero">
           <div class="container">
             <a class="post__back" href="/">← Tillbaka</a>
-            <span class="eyebrow post__category">{{ page.content.category }}</span>
-            <h1 class="post__title">{{ page.content.title }}</h1>
+            <span class="eyebrow post__category">{{ page.content.category | default: 'Hälsa' }}</span>
+            <h1 class="post__title">{{ page.content.title | default: 'Skriv en titel' }}</h1>
             <div class="post__meta">
-              <span class="post__author">{{ page.content.author }}</span>
+              <span class="post__author">{{ page.content.author | default: 'Dr. Anna Lindgren' }}</span>
               <span class="post__dot">·</span>
-              <span class="post__date">{{ page.content.publishedAt | localeDate: 'sv-SE' }}</span>
+              <span class="post__date">{{ page.publishedAt | localeDate: 'sv-SE' }}</span>
               <span class="post__dot">·</span>
-              <span class="post__readtime">{{ page.content.readTime }}</span>
+              <span class="post__readtime">{{ page.content.readTime | default: '5 min lästid' }}</span>
             </div>
           </div>
         </div>
         <div class="container">
           <div class="post__media">
-            <img class="post__image" src="{{ page.content.image.src }}" alt="{{ page.content.image.alt }}">
+            <img class="post__image" src="{{ page.content.image.src | default: 'https://images.unsplash.com/photo-1631217868264-e5b90bb7e330?auto=format&fit=crop&w=1600&q=80' }}" alt="{{ page.content.image.alt | default: 'Vårdklinik' }}">
           </div>
-          <p class="post__lead">{{ page.content.lead }}</p>
+          <p class="post__lead">{{ page.content.lead | default: 'Skriv en kort ingress som beskriver artikeln.' }}</p>
           <div class="post__body">
             {% for block in page.content.body %}{{ block.html | raw }}{% else %}<p>Skriv din text här.</p>{% endfor %}
           </div>
