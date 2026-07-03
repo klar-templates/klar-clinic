@@ -148,8 +148,9 @@ spa("body");
 // }
 
 document.addEventListener("click", (e) => {
-  const nav = e.target.closest('.vkn-burger');
-  if (!nav) return;
+  const burger = e.target.closest('.vkn-burger');
+  if (!burger) return; 
+  const nav = document.querySelector('.vkn-nav');
   if (nav.classList.contains('show')) {
     document.querySelector('.vkn-nav').classList.remove('show');  
   } else {
