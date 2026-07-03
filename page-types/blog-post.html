@@ -79,7 +79,34 @@
   </header>
 
   <main>
-    <div id="blog-post"></div>
+    <div id="blog-post">
+      <article class="post">
+        <div class="post__hero">
+          <div class="container">
+            <a class="post__back" href="/">← Tillbaka</a>
+            <span class="eyebrow post__category"></span>
+            <h1 class="post__title"></h1>
+            <div class="post__meta">
+              <span class="post__author"></span>
+              <span class="post__dot">·</span>
+              <span class="post__date"></span>
+              <span class="post__dot">·</span>
+              <span class="post__readtime"></span>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="post__media">
+            <img class="post__image" src="" alt="">
+          </div>
+          <p class="post__lead"></p>
+          <div class="post__body">
+            <p>Skriv din text här.</p>
+          </div>
+          
+        </div>
+      </article>
+    </div>
     <template data-for="blog-post" data-query="currentPage()">
       <article class="post">
         <div class="post__hero">
