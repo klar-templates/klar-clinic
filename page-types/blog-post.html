@@ -1,4 +1,6 @@
-<!DOCTYPE html><html lang="sv"><head>
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blogg — Vårdkliniken Norden</title>
@@ -77,7 +79,34 @@
   </header>
 
   <main>
-    <div id="blog-post"></div>
+    <div id="blog-post">
+      <article class="post">
+        <div class="post__hero">
+          <div class="container">
+            <a class="post__back" href="/">← Tillbaka</a>
+            <span class="eyebrow post__category">Hälsa</span>
+            <h1 class="post__title">Skriv en titel</h1>
+            <div class="post__meta">
+              <span class="post__author">Dr. Anna Lindgren</span>
+              <span class="post__dot">·</span>
+              <span class="post__date"></span>
+              <span class="post__dot">·</span>
+              <span class="post__readtime">5 min lästid</span>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="post__media">
+            <img class="post__image" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Vårdklinik">
+          </div>
+          <p class="post__lead">Skriv en kort ingress som beskriver artikeln.</p>
+          <div class="post__body">
+            <p>Skriv din text här.</p>
+          </div>
+          
+        </div>
+      </article>
+    </div>
     <template data-for="blog-post" data-query="currentPage()">
       <article class="post">
         <div class="post__hero">
@@ -147,5 +176,5 @@
       </div>
     </div>
   </footer>
-  
-</body></html>
+  </body>
+</html>
