@@ -3,7 +3,7 @@
   "pages": [
     {
       "name": "index.html",
-      "editableElements": "body,\n:is(h1, p, a, img, \n.eyebrow):attr(class(title:Classes)),\n:is(address):attr(style),\nsection:attr(class(title:Classes))",
+      "editableElements": "body,\nsection:attr(class, style),\n:is(h1, p, a, img, span):attr(class, style),\n:is(svg):attr(style)",
       "sharedSections": ".site-header, .site-footer"
     },
     {
