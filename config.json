@@ -14,7 +14,9 @@
         "publishedAt": "",
         "readTime": "5 min lästid",
         "lead": "Skriv en kort ingress som beskriver artikeln."
-      }
+      },
+      "folder": "blog",
+      "order": 4
     },
     {
       "name": "event",
@@ -31,15 +33,12 @@
         "time": "18:00–20:30",
         "location": "Vårdkliniken Norden, Storgatan 12, Stockholm",
         "price": "Gratis — anmälan krävs"
-      }
+      },
+      "folder": "events",
+      "order": 3
     }
   ],
   "pages": [
-    {
-      "name": "boka-tid.html",
-      "editableElements": "body,\nsection:attr(class, style),\n:is(h1, p, a, img, span):attr(class, style),\n:is(svg):attr(style)",
-      "sharedSections": ".site-header, .site-footer"
-    },
     {
       "name": "events.html",
       "editableElements": "body,\nsection:attr(class, style),\n:is(h1, p, a, img, span):attr(class, style),\n:is(svg):attr(style)",
@@ -101,7 +100,7 @@
     },
     {
       "name": "index.html",
-      "editableElements": "body,\nsection:attr(class, style),\n:is(h1, p, a, img, span):attr(class, style),\n:is(svg):attr(style)",
+      "editableElements": "body,\nsection:attr(class),\n:is(h1, p, a, img, .eyebrow):attr(class)",
       "sharedSections": ".site-header, .site-footer"
     },
     {
