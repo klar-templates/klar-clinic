@@ -96,7 +96,7 @@
     },
     {
       "name": "index.html",
-      "editableElements": "body,\nnav[],\nsection:attr(class, style),\n:is(h1, p, a, img, span):attr(class, style),\n:is(svg):attr(style)",
+      "editableElements": "body,\nsection:attr(class, style),\n:is(h1, p, a, img, span):attr(class, style),\n:is(svg):attr(style)",
       "sharedSections": ".site-header, .site-footer"
     },
     {
