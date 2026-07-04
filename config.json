@@ -38,6 +38,16 @@
       "order": 3
     }
   ],
+  "pageTemplates": [
+    {
+      "name": "page-templates/startpage.html",
+      "order": 1
+    },
+    {
+      "name": "page-templates/subpage.html",
+      "order": 2
+    }
+  ],
   "pages": [
     {
       "name": "events.html",
