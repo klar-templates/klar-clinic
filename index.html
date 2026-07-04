@@ -188,7 +188,6 @@
           </div>
           <div id="vkn-event-list" class="card-grid">
             
-            Ängsviksmässan är här
             <article class="card vkn-event-card">
               <div class="card__media">
                 <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Event">
@@ -209,7 +208,6 @@
           </div>
           <template data-for="vkn-event-list" data-query="list('event', { order: 'eventDate:asc', limit: 6 })">
             {% for item in items %}
-            {{ item.content.title }}
             <article class="card vkn-event-card">
               <div class="card__media">
                 <img src="{{ item.content.image.src  }}" alt="{{ item.content.image.alt  }}">
