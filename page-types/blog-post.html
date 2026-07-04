@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="sv">
-  <head>
+<!DOCTYPE html><html lang="sv"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blogg — Vårdkliniken Norden</title>
@@ -149,7 +147,7 @@
           <a class="nav-link" href="/om-oss">Om oss</a>
           <a class="nav-link" href="/events">Events</a>
           <a class="nav-link" href="/kontakt">Kontakt</a>
-          <a class="nav__cta" href="/boka-tid.html">Boka tid</a>
+          <a class="nav__cta" href="/kontakt">Boka tid</a>
           <button class="theme-toggle" aria-label="Växla tema" title="Växla ljus/mörkt tema">
             <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="5"></circle>
@@ -215,13 +213,13 @@
           </div>
           <div class="container">
             <div class="post__media">
-              <img class="post__image" src="{{ page.content.image.src | default: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1600&q=80' }}" alt="{{ page.content.image.alt | default: 'Vårdklinik' }}">
+              <img class="post__image" src="{{ page.content.image.src | default: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&amp;fit=crop&amp;w=1600&amp;q=80' }}" alt="{{ page.content.image.alt | default: 'Vårdklinik' }}">
             </div>
             <p class="post__lead">{{ page.content.lead | default: 'Skriv en kort ingress som beskriver artikeln.' }}</p>
             <div class="post__body">
               {% for block in page.content.body %}{{ block.html | raw }}{% else %}<p>Skriv din text här.</p>{% endfor %}
             </div>
-            {% if page.content.tags.size > 0 %}
+            {% if page.content.tags.size &gt; 0 %}
             <div class="post__tags">
               {% for tag in page.content.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
             </div>
@@ -266,5 +264,5 @@
         </div>
       </div>
     </footer>
-  </body>
-</html>
+  
+</body></html>
