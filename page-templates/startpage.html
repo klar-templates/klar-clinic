@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vårdkliniken Norden</title>
+
+    <!-- Fonts present at first paint → no flicker. Preload URL must match the
+       @font-face src exactly (both crossorigin) or the browser fetches twice. -->
+    <link rel="preload" as="font" type="font/woff2" crossorigin="" href="https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin="" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2">
+    <style>
+      /* Fraunces — variable file, one latin subset covers 400–600 */
+      @font-face {
+        font-family: 'Fraunces';
+        font-style: normal;
+        font-weight: 400 600;
+        font-display: optional;
+        src: url(https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+
+      /* Inter — variable file, one latin subset covers 400–600 */
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400 600;
+        font-display: optional;
+        src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+    </style>
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/images/favicon.png">
+    <script type="module" src="/script.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/"><span class="brand__mark">✚</span> Vårdkliniken Norden</a>
+        <button class="vkn-burger" aria-label="Meny">☰</button>
+        <nav class="vkn-nav">
+          <a class="nav-link" href="/">Hem</a>
+          <a class="nav-link" href="/behandlingar">Behandlingar</a>
+          <a class="nav-link" href="/om-oss">Om oss</a>
+          <a class="nav-link" href="/events">Events</a>
+          <a class="nav-link" href="/kontakt">Kontakt</a>
+          <a class="nav__cta" href="/kontakt">Boka tid</a>
+          <button class="theme-toggle" aria-label="Växla tema" title="Växla ljus/mörkt tema">
+            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main style="gap: 0px; padding: 0px">
+      <section class="hero">
+        <div class="container hero__grid">
+          <div>
+            <span class="eyebrow">Trygg vård nära dig</span>
+            <h1 style="" class="">Personlig vård med omtanke och tid för varje patient</h1>
+            <p class="hero__intro">
+              Vårdkliniken Norden erbjuder modern och trygg vård med
+              legitimerad personal. Hos oss möts du av lugn, kunskap och
+              korta väntetider – mitt i centrala Stockholm.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn-primary" href="/kontakt" nav-link="1" nav-link1="2" nav-link2="3" style="8">Boka
+                tid</a>
+              <a class="btn btn-outline" href="/behandlingar" nav-link="4" nav-link1="5" nav-link2="6" style="7">Se
+                behandlingar</a>
+            </div>
+          </div>
+          <div class="hero__media">
+            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixid=M3w5ODc2NzB8MHwxfHNlYXJjaHw2fHxjbGluaWN8ZW58MXx8fHwxNzgyOTAxMjU2fDA&amp;ixlib=rb-4.1.0&amp;w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="Ljus och välkomnande klinikmiljö" style="">
+          </div>
+        </div>
+      </section>
+      <section class="features">
+        <div class="container">
+          <div class="features__grid">
+            <div class="feature-card">
+              <h3>Legitimerad personal</h3>
+              <p>Erfarna läkare och sjuksköterskor med full legitimation.</p>
+            </div>
+            <div class="feature-card">
+              <h3>Korta väntetider</h3>
+              <p>Boka tid snabbt – ofta redan inom samma vecka.</p>
+            </div>
+            <div class="feature-card">
+              <h3>Centralt läge</h3>
+              <p>Lätt att nå med kollektivtrafik mitt i city.</p>
+            </div>
+            <div class="feature-card">
+              <h3>Trygg uppföljning</h3>
+              <p>Vi följer upp din vård och finns kvar för dig.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Vad vi erbjuder</span>
+            <h2>Våra behandlingar</h2>
+            <p>
+              Vi erbjuder ett brett utbud av tjänster för hela familjen –
+              från hälsoundersökningar till specialistvård. Här är några av
+              våra mest efterfrågade behandlingar.
+            </p>
+          </div>
+          <div class="card-grid">
+            <article class="card">
+              <div class="card__media">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Hälsoundersökning">
+              </div>
+              <div class="card__body">
+                <h3>Hälsoundersökning</h3>
+                <p class="card__desc">
+                  En grundlig genomgång av din hälsa med blodprov,
+                  läkarsamtal och individuell rådgivning.
+                </p>
+                <div class="card__meta">
+                  <span class="tag">1 295 kr</span>
+                  <span class="tag tag-muted">45 min</span>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card__media">
+                <img src="https://images.unsplash.com/photo-1584516150909-c43483ee7932?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Vaccination">
+              </div>
+              <div class="card__body">
+                <h3>Vaccination</h3>
+                <p class="card__desc">
+                  Skydd inför resa eller säsong. Vi erbjuder ett komplett
+                  utbud av vacciner.
+                </p>
+                <div class="card__meta">
+                  <span class="tag">Från 350 kr</span>
+                  <span class="tag tag-muted">20 min</span>
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card__media">
+                <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Läkarbesök">
+              </div>
+              <div class="card__body">
+                <h3>Läkarbesök</h3>
+                <p class="card__desc">
+                  Ett tryggt möte med legitimerad läkare för dina besvär och
+                  frågor.
+                </p>
+                <div class="card__meta">
+                  <span class="tag">950 kr</span>
+                  <span class="tag tag-muted">30 min</span>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="more">
+            <a class="cta-link" href="/behandlingar">Visa alla behandlingar →</a>
+          </div>
+        </div>
+      </section>
+      <section class="section vkn-events">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Kalender</span>
+            <h2>Kommande event</h2>
+            <p>
+              Håll dig uppdaterad om våra workshops, föreläsningar och
+              hälsokvällar. Välkommen att delta!
+            </p>
+          </div>
+          <div id="vkn-event-list" class="card-grid">
+            
+            <article class="card vkn-event-card">
+              <div class="card__media">
+                <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?ixid=M3w5ODc2NzB8MHwxfHNlYXJjaHwyNHx8ZXZlbnR8ZW58MXx8fHwxNzgzMTU1ODQ0fDA&amp;ixlib=rb-4.1.0&amp;w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="Föreläsning om sömn och stress på Vårdkliniken Norden">
+              </div>
+              <div class="card__body">
+                <span class="tag vkn-event-card__category">Öppet hus</span>
+                <h3>Kvällens tema: Sömn, stress och återhämtning</h3>
+                <p class="card__desc">En kostnadsfri kväll för dig som vill förstå hur vardagens stress påverkar kroppen — och få konkreta verktyg för bättre sömn och varaktig återhämtning.</p>
+                <div class="card__meta">
+                  <span class="tag">Torsdag 26 mars 2026</span>
+                  <span class="tag tag-muted">18:00–20:30</span>
+                  <span class="tag tag-muted">Vårdkliniken Norden, Storgatan 12, Stockholm</span>
+                </div>
+                <a class="cta-link vkn-event-card__link" href="/events/stress-tema.html">Läs mer →</a>
+              </div>
+            </article>
+            
+            <article class="card vkn-event-card">
+              <div class="card__media">
+                <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixid=M3w5ODc2NzB8MHwxfHNlYXJjaHw0fHxldmVudHxlbnwxfHx8fDE3ODMxNTU4NDR8MA&amp;ixlib=rb-4.1.0&amp;w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="Föreläsning om sömn och stress på Vårdkliniken Norden">
+              </div>
+              <div class="card__body">
+                <span class="tag vkn-event-card__category">Öppet hus</span>
+                <h3>Kvällens tema: Sömn, stress och återhämtning</h3>
+                <p class="card__desc">En kostnadsfri kväll för dig som vill förstå hur vardagens stress påverkar kroppen — och få konkreta verktyg för bättre sömn och varaktig återhämtning.</p>
+                <div class="card__meta">
+                  <span class="tag">Torsdag 26 mars 2026</span>
+                  <span class="tag tag-muted">18:00–20:30</span>
+                  <span class="tag tag-muted">Vårdkliniken Norden, Storgatan 12, Stockholm</span>
+                </div>
+                <a class="cta-link vkn-event-card__link" href="/events/somn-event.html">Läs mer →</a>
+              </div>
+            </article>
+            
+            <article class="card vkn-event-card">
+              <div class="card__media">
+                <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixid=M3w5ODc2NzB8MHwxfHNlYXJjaHwxMnx8ZXZlbnR8ZW58MXx8fHwxNzgzMTU1ODQ0fDA&amp;ixlib=rb-4.1.0&amp;w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="Event">
+              </div>
+              <div class="card__body">
+                <span class="tag vkn-event-card__category">Event</span>
+                <h3>Ängsviksmässan är här</h3>
+                <p class="card__desc">Alla som vill komma är välkomna.</p>
+                <div class="card__meta">
+                  <span class="tag">15 mars 2026</span>
+                  <span class="tag tag-muted">18:00</span>
+                  <span class="tag tag-muted">Klinikens lokaler</span>
+                </div>
+                <a class="cta-link vkn-event-card__link" href="/events/angsviks-massan.html">Läs mer →</a>
+              </div>
+            </article>
+            
+          </div>
+          <template data-for="vkn-event-list" data-query="list('event', { order: 'eventDate:asc', limit: 6 })">
+            {% for item in items %}
+            <article class="card vkn-event-card">
+              <div class="card__media">
+                <img src="{{ item.content.image.src  }}" alt="{{ item.content.image.alt  }}">
+              </div>
+              <div class="card__body">
+                <span class="tag vkn-event-card__category">{{ item.content.category  }}</span>
+                <h3>{{ item.content.title }}</h3>
+                <p class="card__desc">{{ item.content.description }}</p>
+                <div class="card__meta">
+                  <span class="tag">{{ item.content.eventDate  }}</span>
+                  <span class="tag tag-muted">{{ item.content.time  }}</span>
+                  <span class="tag tag-muted">{{ item.content.location  }}</span>
+                </div>
+                <a class="cta-link vkn-event-card__link" href="{{ item.url }}">Läs mer →</a>
+              </div>
+            </article>
+            {% else %}
+            <p class="vkn-events__empty">Inga kommande event just nu. Återkom snart!</p>
+            {% endfor %}
+          </template>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="cta">
+            <h2>Redo att boka din tid?</h2>
+            <p>
+              Hör av dig så hjälper vi dig att hitta en tid som passar dig.
+              Vi har korta väntetider och tar emot både nya och återkommande
+              patienter.
+            </p>
+            <a class="btn btn-primary" href="/kontakt">Boka tid</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div>
+            <div class="brand">
+              <span class="brand__mark">✚</span> Vårdkliniken Norden
+            </div>
+            <p>
+              Modern och trygg vård i hjärtat av staden. Legitimerad
+              personal och korta väntetider för hela familjen.
+            </p>
+          </div>
+          <div>
+            <h4>Sidor</h4>
+            <ul>
+              <li><a href="/">Hem</a></li>
+              <li><a href="/behandlingar">Behandlingar</a></li>
+              <li><a href="/om-oss">Om oss</a></li>
+              <li><a href="/kontakt">Kontakt</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Kontakt</h4>
+            <ul>
+              <li>Storgatan 12, 111 22 Stockholm</li>
+              <li>08-123 45 67</li>
+              <li>info@vardklinikennorden.se</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          © 2026 Vårdkliniken Norden. Alla rättigheter förbehållna.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
