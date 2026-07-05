@@ -340,7 +340,7 @@ a {
 
 .hero__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.05fr 0.95fr;
   gap: var(--space-16);
   align-items: center;
 }
