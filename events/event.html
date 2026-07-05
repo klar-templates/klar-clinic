@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="sv"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vårdkliniken Norden - Event</title>
+    <link rel="preload" as="font" type="font/woff2" crossorigin="" href="https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin="" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2">
+    <style>
+      @font-face {
+        font-family: 'Fraunces';
+        font-style: normal;
+        font-weight: 400 600;
+        font-display: optional;
+        src: url(https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400 600;
+        font-display: optional;
+        src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+    </style>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/images/favicon.png">
+    <script type="module" src="/script.js"></script>
+    <style>
+      .event-meta {
+        margin-top: var(--space-6);
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-2);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/"><span class="brand__mark">✚</span> Vårdkliniken Norden</a>
+        <button class="vkn-burger" aria-label="Meny">☰</button>
+        <nav class="vkn-nav">
+          <a class="nav-link" href="/">Hem</a>
+          <a class="nav-link" href="/behandlingar">Behandlingar</a>
+          <a class="nav-link" href="/om-oss">Om oss</a>
+          <a class="nav-link" href="/events">Events</a>
+          <a class="nav-link" href="/kontakt">Kontakt</a>
+          <a class="nav__cta" href="/kontakt">Boka tid</a>
+          <button class="theme-toggle" aria-label="Växla tema" title="Växla ljus/mörkt tema">
+            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="pagehead event-head">
+        <div class="container">
+          <span class="eyebrow field-category">Öppet hus</span>
+          <h1 class="field-title">Kvällens tema: Sömn, stress och återhämtning</h1>
+          <p class="field-desc">En kostnadsfri kväll för dig som vill förstå hur vardagens stress påverkar kroppen — och få konkreta verktyg för bättre sömn och varaktig återhämtning.</p>
+          <div class="event-meta">
+            <span class="tag field-date">Torsdag 26 mars 2026</span>
+            <span class="tag tag-muted field-time">18:00–20:30</span>
+            <span class="tag tag-muted field-location">Vårdkliniken Norden, Storgatan 12, Stockholm</span>
+            <span class="tag tag-muted field-price">Gratis — anmälan krävs</span>
+          </div>
+        </div>
+      </section>
+      <section class="section" style="padding-top: var(--space-4); padding-bottom: var(--space-4);">
+        <div class="container">
+          <div class="event-hero">
+            <img class="field-image" src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Föreläsning om sömn och stress på Vårdkliniken Norden">
+          </div>
+        </div>
+      </section>
+      <section class="section py-4">
+        <div class="container event-body">
+          <div class="field-body">
+            <h2>En kväll om kroppens viktigaste resurs — återhämtningen</h2>
+            <p>Upplever du att du aldrig riktigt hinner landa? Att sömnen är ytlig, tankarna snurrar och energin tar slut redan innan lunch? Du är inte ensam. Stressrelaterad ohälsa är idag en av de vanligaste orsakerna till sjukskrivning i Sverige, och det vi ofta kallar "trötthet" är i många fall kroppens sätt att säga ifrån.</p>
+            <p>Under denna kväll fördjupar vi oss i hur stress påverkar hjärna, hormonsystem och immunförsvar — och framför allt vad du själv kan göra för att vända utvecklingen. Du får insikt från vår medicinska personal och praktiska övningar som du kan ta med hem direkt.</p>
+            <h3>Program för kvällen</h3>
+            <ul>
+              <li><strong>18:00</strong> — Föreläsning: "Hjärnan under stress — vad händer egentligen?" med dr. Sofia Lindgren, specialist i allmänmedicin</li>
+              <li><strong>18:45</strong> — Paneldebatt: Sömn i en digital tid — skärmvanor, melatonin och den försvunna nattsömnen</li>
+              <li><strong>19:15</strong> — Kaffe och frukt (serveras)</li>
+              <li><strong>19:30</strong> — Workshop: Andningsövningar och avslappningstekniker som du kan använda varje dag</li>
+              <li><strong>20:00</strong> — Frågestund med kliniken läkare och kuratorer</li>
+              <li><strong>20:30</strong> — Avslut och möjlighet till enskilda bokningar</li>
+            </ul>
+            <h3>För vem?</h3>
+            <p>Kvällen vänder sig till alla som känner sig dränerade av stress, har svårt att sova eller bara vill förstå mer om hur kroppen fungerar under press. Ingen förkunskap krävs — nyfikenhet räcker.</p>
+            <h3>Praktisk information</h3>
+            <p>Platsen har begränsat antal platser (max 40 deltagare) för att behålla en nära och personlig stämning. Anmälan är därför obligatorisk. Fika och dryck ingår. Arrangemanget är kostnadsfritt.</p>
+            <blockquote>Att förstå sin stressreaktion är första steget till att ta tillbaka kontrollen över sin hälsa. Det behöver inte vara komplicerat — men det kräver att man börjar någonstans.</blockquote>
+            <p>Vi ser fram emot att dela en inspirerande och nyttig kväll med dig.</p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="cta">
+            <h2>Vill du delta?</h2>
+            <p>Platserna är begränsade till 40 deltagare. Anmäl dig senast 22 mars via formuläret på kontaktsidan — skriv "Sömn &amp; stress" i meddelandefältet så vet vi att du vill ha plats.</p>
+            <a class="btn btn-primary" href="/kontakt">Anmäl mig nu</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div>
+            <div class="brand">
+              <span class="brand__mark">✚</span> Vårdkliniken Norden
+            </div>
+            <p>
+              Modern och trygg vård i hjärtat av staden. Legitimerad
+              personal och korta väntetider för hela familjen.
+            </p>
+          </div>
+          <div>
+            <h4>Sidor</h4>
+            <ul>
+              <li><a href="/">Hem</a></li>
+              <li><a href="/behandlingar">Behandlingar</a></li>
+              <li><a href="/om-oss">Om oss</a></li>
+              <li><a href="/kontakt">Kontakt</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Kontakt</h4>
+            <ul>
+              <li>Storgatan 12, 111 22 Stockholm</li>
+              <li>08-123 45 67</li>
+              <li>info@vardklinikennorden.se</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          © 2026 Vårdkliniken Norden. Alla rättigheter förbehållna.
+        </div>
+      </div>
+    </footer>
+  
+</body></html>
