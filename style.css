@@ -878,20 +878,6 @@ a {
 .mt-8 { margin-top: var(--space-8); }
 .mb-8 { margin-bottom: var(--space-8); }
 .mx-auto { margin-left: auto; margin-right: auto; }
-.w-2 { width: var(--space-2); }
-.w-4 { width: var(--space-4); }
-.w-6 { width: var(--space-6); }
-.w-8 { width: var(--space-8); }
-.w-10 { width: var(--space-10); }
-.w-12 { width: var(--space-12); }
-.w-16 { width: var(--space-16); }
-.h-2 { height: var(--space-2); }
-.h-4 { height: var(--space-4); }
-.h-6 { height: var(--space-6); }
-.h-8 { height: var(--space-8); }
-.h-10 { height: var(--space-10); }
-.h-12 { height: var(--space-12); }
-.h-16 { height: var(--space-16); }
 .text-center { text-align: center; }
 .text-xs { font-size: var(--text-xs); }
 .text-sm { font-size: var(--text-sm); }
