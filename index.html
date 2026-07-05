@@ -111,6 +111,229 @@
           </div>
         </div>
       </section>
+      <section class="section vkn-faq" id="faq">
+        <style>
+        .vkn-faq__list {
+          max-width: 820px;
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-4);
+        }
+
+        .vkn-faq__item {
+          background: var(--card);
+          border: 1px solid var(--border);
+          border-radius: var(--radius-sm);
+          overflow: hidden;
+          transition: border-color var(--transition), box-shadow var(--transition);
+        }
+
+        .vkn-faq__item:hover {
+          border-color: var(--primary);
+        }
+
+        .vkn-faq__item[open] {
+          box-shadow: var(--shadow-md);
+          border-color: var(--primary);
+        }
+
+        /* Remove default details marker */
+        .vkn-faq__item>summary {
+          list-style: none;
+        }
+
+        .vkn-faq__item>summary::-webkit-details-marker {
+          display: none;
+        }
+
+        .vkn-faq__question {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: var(--space-4);
+          padding: var(--space-6);
+          cursor: pointer;
+          font-family: var(--font-sans);
+          font-size: 1.06rem;
+          font-weight: 600;
+          color: var(--foreground);
+          user-select: none;
+          transition: color var(--transition);
+        }
+
+        .vkn-faq__question:hover {
+          color: var(--primary);
+        }
+
+        .vkn-faq__icon {
+          width: 22px;
+          height: 22px;
+          flex-shrink: 0;
+          color: var(--primary);
+          transition: transform 0.2s ease;
+        }
+
+        /* Animate the minus line: when open it rotates 90deg → collapses to just the horizontal line */
+        .vkn-faq__item[open] .vkn-faq__icon-minus {
+          transform: rotate(90deg);
+          transform-origin: center;
+        }
+
+        /* Icon group rotation for a smoother feel */
+        .vkn-faq__item[open] .vkn-faq__icon {
+          transform: rotate(180deg);
+        }
+
+        .vkn-faq__answer {
+          padding: 0 var(--space-6) var(--space-6);
+          color: var(--muted);
+          font-size: 0.98rem;
+          line-height: 1.65;
+          animation: vkn-faq-fade-in 0.25s ease;
+        }
+
+        @keyframes vkn-faq-fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(-6px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .vkn-faq__more {
+          display: flex;
+          align-items: center;
+          gap: var(--space-4);
+          margin-top: var(--space-12);
+          flex-wrap: wrap;
+        }
+
+        .vkn-faq__more-text {
+          color: var(--muted);
+          font-size: 1rem;
+        }
+      </style>
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Frågor &amp; svar</span>
+            <h2>Vanliga frågor</h2>
+            <p>Här svarar vi på de vanligaste frågorna vi får. Hittar du inte svaret du letar efter? Välkommen att
+              kontakta oss direkt.</p>
+          </div>
+
+          <div class="vkn-faq__list">
+            <details class="vkn-faq__item" open="">
+              <summary class="vkn-faq__question">
+                <span>Hur bokar jag en tid?</span>
+                <svg class="vkn-faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <line class="vkn-faq__icon-minus" x1="12" y1="5" x2="12" y2="19"></line>
+                </svg>
+              </summary>
+              <div class="vkn-faq__answer">
+                <p>Du bokar enkelt tid via telefon 08-123 45 67 eller via formuläret på vår kontaktsida. Vi erbjuder
+                  tider måndag–fredag 08:00–18:00 samt lördagar 09:00–13:00. Ofta kan vi erbjuda tid redan inom samma
+                  vecka.</p>
+              </div>
+            </details>
+
+            <details class="vkn-faq__item">
+              <summary class="vkn-faq__question">
+                <span>Vilka betalningsätt accepterar ni?</span>
+                <svg class="vkn-faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <line class="vkn-faq__icon-minus" x1="12" y1="5" x2="12" y2="19"></line>
+                </svg>
+              </summary>
+              <div class="vkn-faq__answer">
+                <p>Vi tar emot kortbetalning (Visa och Mastercard), Swish och faktura. För företagshälsovård erbjuder vi
+                  även avtal med månadsvis fakturering.</p>
+              </div>
+            </details>
+
+            <details class="vkn-faq__item">
+              <summary class="vkn-faq__question">
+                <span>Behöver jag remiss för att besöka er?</span>
+                <svg class="vkn-faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <line class="vkn-faq__icon-minus" x1="12" y1="5" x2="12" y2="19"></line>
+                </svg>
+              </summary>
+              <div class="vkn-faq__answer">
+                <p>Nej, du behöver ingen remiss för att besöka oss. Välkommen att boka tid direkt. Vid behov skickar vi
+                  remiss vidare till specialist eller sjukhus för vidare utredning.</p>
+              </div>
+            </details>
+
+            <details class="vkn-faq__item">
+              <summary class="vkn-faq__question">
+                <span>Era behandlingar täcks av högkostnadsskyddet?</span>
+                <svg class="vkn-faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <line class="vkn-faq__icon-minus" x1="12" y1="5" x2="12" y2="19"></line>
+                </svg>
+              </summary>
+              <div class="vkn-faq__answer">
+                <p>Vissa av våra läkarbesök omfattas av regionens patientavgift och högkostnadsskydd. Fråga oss gärna
+                  vid bokningen så hjälper vi dig att reda ut vad som gäller för just din behandling.</p>
+              </div>
+            </details>
+
+            <details class="vkn-faq__item">
+              <summary class="vkn-faq__question">
+                <span>Kan jag byta eller avboka min tid?</span>
+                <svg class="vkn-faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <line class="vkn-faq__icon-minus" x1="12" y1="5" x2="12" y2="19"></line>
+                </svg>
+              </summary>
+              <div class="vkn-faq__answer">
+                <p>Ja, du kan självklart byta eller avboka din tid. Vi ber dig att höra av dig senast 24 timmar innan
+                  ditt besök så att vi kan erbjuda tiden till någon annan. Avbokning senare än 24 timmar innan kan
+                  debiteras med en avgift.</p>
+              </div>
+            </details>
+
+            <details class="vkn-faq__item">
+              <summary class="vkn-faq__question">
+                <span>Finns parkering i närheten av kliniken?</span>
+                <svg class="vkn-faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <line class="vkn-faq__icon-minus" x1="12" y1="5" x2="12" y2="19"></line>
+                </svg>
+              </summary>
+              <div class="vkn-faq__answer">
+                <p>Ja, det finns parkering på Storgatan och i närliggande parkeringshus. Kliniken ligger också centralt
+                  med god tillgång till kollektivtrafik — närmaste tunnelbanestation är bara tre minuters promenad bort.
+                </p>
+              </div>
+            </details>
+          </div>
+
+          <div class="vkn-faq__more">
+            <p class="vkn-faq__more-text">Hittade du inte svar på din fråga?</p>
+            <a class="btn btn-outline" href="/kontakt">Kontakta oss</a>
+          </div>
+        </div>
+        <script>
+        // Close other open items when one opens (accordion behaviour)
+        document.querySelectorAll('.vkn-faq__item').forEach(function(item) {
+          item.addEventListener('toggle', function() {
+            if (item.open) {
+              document.querySelectorAll('.vkn-faq__item').forEach(function(other) {
+                if (other !== item && other.open) {
+                  other.open = false;
+                }
+              });
+            }
+          });
+        });
+      </script>
+      </section>
       <section class="section">
         <div class="container">
           <div class="section-head">
