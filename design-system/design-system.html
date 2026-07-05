@@ -315,6 +315,10 @@
             <div class="ds-swatch__color bg-border"></div>
             <div class="ds-swatch__label">Border</div>
           </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color bg-danger"></div>
+            <div class="ds-swatch__label">Danger</div>
+          </div>
         </div>
       </section>
 
@@ -618,6 +622,30 @@
             </div>
           </section>
 
+          <section class="todo-section" data-klar-ds-label="Todo List">
+            <div class="todo-section__container">
+              <div class="todo-section__head">
+                <span class="eyebrow">Checklista</span>
+                <h2>Din att-göra-lista</h2>
+                <p>Håll koll på dina uppgifter och kom ihåg vad som behöver göras. Listan sparas i din webbläsare.</p>
+              </div>
+              <div class="todo-section__card">
+                <form class="todo-section__form" data-todo-form="">
+                  <input type="text" class="todo-section__input" placeholder="Lägg till en uppgift…" data-todo-input="" aria-label="Ny uppgift">
+                  <button type="submit" class="btn btn-primary">Lägg till</button>
+                </form>
+                <ul class="todo-section__list" data-todo-list=""></ul>
+                <div class="todo-section__empty" data-todo-empty="" style="display: block;">
+                  Inga uppgifter än. Lägg till din första ovan!
+                </div>
+                <div class="todo-section__footer" data-todo-footer="" style="display:none;">
+                  <span data-todo-count="">0 återstående</span>
+                  <button type="button" class="todo-section__clear" data-todo-clear="">Ta bort avklarade</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <section class="section" data-klar-ds-label="Contact">
             <div class="container contact-grid">
               <div class="info-grid">
@@ -712,357 +740,102 @@
     <script type="application/json" data-klar-ds>
       {
         "classes": {
-          "Utilities": [{
-              "label": "Flex",
-              "value": "flex"
-            },
-            {
-              "label": "Column",
-              "value": "flex-col"
-            },
-            {
-              "label": "Items center",
-              "value": "items-center"
-            },
-            {
-              "label": "Justify center",
-              "value": "justify-center"
-            },
-            {
-              "label": "Justify between",
-              "value": "justify-between"
-            },
-            {
-              "label": "Gap 2",
-              "value": "gap-2"
-            },
-            {
-              "label": "Gap 3",
-              "value": "gap-3"
-            },
-            {
-              "label": "Gap 4",
-              "value": "gap-4"
-            },
-            {
-              "label": "Gap 5",
-              "value": "gap-5"
-            },
-            {
-              "label": "Gap 6",
-              "value": "gap-6"
-            },
-            {
-              "label": "Gap 8",
-              "value": "gap-8"
-            },
-            {
-              "label": "Gap 12",
-              "value": "gap-12"
-            },
-            {
-              "label": "Grid",
-              "value": "grid"
-            },
-            {
-              "label": "Columns 2",
-              "value": "grid-cols-2"
-            },
-            {
-              "label": "Columns 3",
-              "value": "grid-cols-3"
-            },
-            {
-              "label": "Columns 4",
-              "value": "grid-cols-4"
-            },
-            {
-              "label": "Vertical 3",
-              "value": "py-3"
-            },
-            {
-              "label": "Vertical 8",
-              "value": "py-8"
-            },
-            {
-              "label": "Vertical 12",
-              "value": "py-12"
-            },
-            {
-              "label": "Vertical 16",
-              "value": "py-16"
-            },
-            {
-              "label": "Vertical 20",
-              "value": "py-20"
-            },
-            {
-              "label": "Padding 3",
-              "value": "p-3"
-            },
-            {
-              "label": "Padding 6",
-              "value": "p-6"
-            },
-            {
-              "label": "Padding 8",
-              "value": "p-8"
-            },
-            {
-              "label": "Horizontal 3",
-              "value": "px-3"
-            },
-            {
-              "label": "Horizontal 5",
-              "value": "px-5"
-            },
-            {
-              "label": "Horizontal 6",
-              "value": "px-6"
-            },
-            {
-              "label": "Horizontal 7",
-              "value": "px-7"
-            },
-            {
-              "label": "Top 8",
-              "value": "mt-8"
-            },
-            {
-              "label": "Bottom 8",
-              "value": "mb-8"
-            },
-            {
-              "label": "Center horizontal",
-              "value": "mx-auto"
-            },
-            {
-              "label": "Align center",
-              "value": "text-center"
-            },
-            {
-              "label": "XS",
-              "value": "text-xs"
-            },
-            {
-              "label": "Small",
-              "value": "text-sm"
-            },
-            {
-              "label": "Base",
-              "value": "text-base"
-            },
-            {
-              "label": "Medium",
-              "value": "text-md"
-            },
-            {
-              "label": "Large",
-              "value": "text-lg"
-            },
-            {
-              "label": "XL",
-              "value": "text-xl"
-            },
-            {
-              "label": "2XL",
-              "value": "text-2xl"
-            },
-            {
-              "label": "3XL",
-              "value": "text-3xl"
-            },
-            {
-              "label": "4XL",
-              "value": "text-4xl"
-            },
-            {
-              "label": "5XL",
-              "value": "text-5xl"
-            },
-            {
-              "label": "Muted",
-              "value": "text-muted-foreground"
-            },
-            {
-              "label": "Primary dark",
-              "value": "text-primary-dark"
-            },
-            {
-              "label": "Sans font",
-              "value": "font-sans"
-            },
-            {
-              "label": "Serif font",
-              "value": "font-serif"
-            },
-            {
-              "label": "Normal",
-              "value": "font-normal"
-            },
-            {
-              "label": "Semibold",
-              "value": "font-semibold"
-            },
-            {
-              "label": "Bold",
-              "value": "font-bold"
-            },
-            {
-              "label": "Tight",
-              "value": "leading-tight"
-            },
-            {
-              "label": "Background",
-              "value": "bg-background"
-            },
-            {
-              "label": "Foreground",
-              "value": "bg-foreground"
-            },
-            {
-              "label": "Primary",
-              "value": "bg-primary"
-            },
-            {
-              "label": "Primary dark",
-              "value": "bg-primary-dark"
-            },
-            {
-              "label": "Card surface",
-              "value": "bg-card"
-            },
-            {
-              "label": "Accent",
-              "value": "bg-accent"
-            },
-            {
-              "label": "Muted soft",
-              "value": "bg-muted-soft"
-            },
-            {
-              "label": "Muted",
-              "value": "bg-muted"
-            },
-            {
-              "label": "Border",
-              "value": "bg-border"
-            },
-            {
-              "label": "Footer",
-              "value": "bg-footer"
-            },
-            {
-              "label": "Primary",
-              "value": "text-primary"
-            },
-            {
-              "label": "Body",
-              "value": "text-foreground"
-            },
-            {
-              "label": "Small radius",
-              "value": "rounded-sm"
-            },
-            {
-              "label": "Medium radius",
-              "value": "rounded-md"
-            },
-            {
-              "label": "Rounded",
-              "value": "rounded-lg"
-            },
-            {
-              "label": "Full",
-              "value": "rounded-full"
-            },
-            {
-              "label": "Shadow",
-              "value": "shadow-md"
-            },
-            {
-              "label": "Border",
-              "value": "border"
-            },
-            {
-              "label": "Hidden",
-              "value": "hidden"
-            },
-            {
-              "label": "Prose",
-              "value": "prose"
-            },
-            {
-              "label": "Container",
-              "value": "container"
-            },
-            {
-              "label": "Columns 2",
-              "value": "md:grid-cols-2"
-            },
-            {
-              "label": "Columns 3",
-              "value": "md:grid-cols-3"
-            },
-            {
-              "label": "Columns 4",
-              "value": "md:grid-cols-4"
-            },
-            {
-              "label": "Flex",
-              "value": "md:flex"
-            },
-            {
-              "label": "Hidden",
-              "value": "md:hidden"
-            }
+          "Utilities": [
+            { "label": "Flex", "value": "flex" },
+            { "label": "Column", "value": "flex-col" },
+            { "label": "Items center", "value": "items-center" },
+            { "label": "Justify center", "value": "justify-center" },
+            { "label": "Justify between", "value": "justify-between" },
+            { "label": "Gap 2", "value": "gap-2" },
+            { "label": "Gap 3", "value": "gap-3" },
+            { "label": "Gap 4", "value": "gap-4" },
+            { "label": "Gap 5", "value": "gap-5" },
+            { "label": "Gap 6", "value": "gap-6" },
+            { "label": "Gap 8", "value": "gap-8" },
+            { "label": "Gap 12", "value": "gap-12" },
+            { "label": "Grid", "value": "grid" },
+            { "label": "Columns 2", "value": "grid-cols-2" },
+            { "label": "Columns 3", "value": "grid-cols-3" },
+            { "label": "Columns 4", "value": "grid-cols-4" },
+            { "label": "Vertical 3", "value": "py-3" },
+            { "label": "Vertical 8", "value": "py-8" },
+            { "label": "Vertical 12", "value": "py-12" },
+            { "label": "Vertical 16", "value": "py-16" },
+            { "label": "Vertical 20", "value": "py-20" },
+            { "label": "Padding 3", "value": "p-3" },
+            { "label": "Padding 6", "value": "p-6" },
+            { "label": "Padding 8", "value": "p-8" },
+            { "label": "Horizontal 3", "value": "px-3" },
+            { "label": "Horizontal 5", "value": "px-5" },
+            { "label": "Horizontal 6", "value": "px-6" },
+            { "label": "Horizontal 7", "value": "px-7" },
+            { "label": "Top 8", "value": "mt-8" },
+            { "label": "Bottom 8", "value": "mb-8" },
+            { "label": "Center horizontal", "value": "mx-auto" },
+            { "label": "Align center", "value": "text-center" },
+            { "label": "XS", "value": "text-xs" },
+            { "label": "Small", "value": "text-sm" },
+            { "label": "Base", "value": "text-base" },
+            { "label": "Medium", "value": "text-md" },
+            { "label": "Large", "value": "text-lg" },
+            { "label": "XL", "value": "text-xl" },
+            { "label": "2XL", "value": "text-2xl" },
+            { "label": "3XL", "value": "text-3xl" },
+            { "label": "4XL", "value": "text-4xl" },
+            { "label": "5XL", "value": "text-5xl" },
+            { "label": "Muted", "value": "text-muted-foreground" },
+            { "label": "Primary dark", "value": "text-primary-dark" },
+            { "label": "Danger", "value": "text-danger" },
+            { "label": "Sans font", "value": "font-sans" },
+            { "label": "Serif font", "value": "font-serif" },
+            { "label": "Normal", "value": "font-normal" },
+            { "label": "Semibold", "value": "font-semibold" },
+            { "label": "Bold", "value": "font-bold" },
+            { "label": "Tight", "value": "leading-tight" },
+            { "label": "Background", "value": "bg-background" },
+            { "label": "Foreground", "value": "bg-foreground" },
+            { "label": "Primary", "value": "bg-primary" },
+            { "label": "Primary dark", "value": "bg-primary-dark" },
+            { "label": "Card surface", "value": "bg-card" },
+            { "label": "Accent", "value": "bg-accent" },
+            { "label": "Muted soft", "value": "bg-muted-soft" },
+            { "label": "Muted", "value": "bg-muted" },
+            { "label": "Border", "value": "bg-border" },
+            { "label": "Footer", "value": "bg-footer" },
+            { "label": "Danger", "value": "bg-danger" },
+            { "label": "Primary", "value": "text-primary" },
+            { "label": "Body", "value": "text-foreground" },
+            { "label": "Small radius", "value": "rounded-sm" },
+            { "label": "Medium radius", "value": "rounded-md" },
+            { "label": "Rounded", "value": "rounded-lg" },
+            { "label": "Full", "value": "rounded-full" },
+            { "label": "Shadow", "value": "shadow-md" },
+            { "label": "Border", "value": "border" },
+            { "label": "Hidden", "value": "hidden" },
+            { "label": "Prose", "value": "prose" },
+            { "label": "Container", "value": "container" },
+            { "label": "Columns 2", "value": "md:grid-cols-2" },
+            { "label": "Columns 3", "value": "md:grid-cols-3" },
+            { "label": "Columns 4", "value": "md:grid-cols-4" },
+            { "label": "Flex", "value": "md:flex" },
+            { "label": "Hidden", "value": "md:hidden" }
           ],
-          "Typography": [{
-              "label": "Heading 1",
-              "value": "font-serif text-5xl font-bold leading-tight"
-            },
-            {
-              "label": "Heading 2",
-              "value": "font-serif text-4xl font-bold leading-tight"
-            },
-            {
-              "label": "Heading 3",
-              "value": "font-serif text-lg font-semibold leading-tight"
-            },
-            {
-              "label": "Body",
-              "value": "font-sans text-base font-normal"
-            },
-            {
-              "label": "Small",
-              "value": "font-sans text-sm font-normal"
-            }
+          "Typography": [
+            { "label": "Heading 1", "value": "font-serif text-5xl font-bold leading-tight" },
+            { "label": "Heading 2", "value": "font-serif text-4xl font-bold leading-tight" },
+            { "label": "Heading 3", "value": "font-serif text-lg font-semibold leading-tight" },
+            { "label": "Body", "value": "font-sans text-base font-normal" },
+            { "label": "Small", "value": "font-sans text-sm font-normal" }
           ],
-          "Grid": [{
-              "label": "2 columns",
-              "value": "grid grid-cols-2"
-            },
-            {
-              "label": "3 columns",
-              "value": "grid grid-cols-3"
-            },
-            {
-              "label": "4 columns",
-              "value": "grid grid-cols-4"
-            }
+          "Grid": [
+            { "label": "2 columns", "value": "grid grid-cols-2" },
+            { "label": "3 columns", "value": "grid grid-cols-3" },
+            { "label": "4 columns", "value": "grid grid-cols-4" }
           ],
-          "Container and Grid": [{
-              "label": "Default · 2 cols",
-              "value": "container grid grid-cols-2"
-            },
-            {
-              "label": "Default · 3 cols",
-              "value": "container grid grid-cols-3"
-            },
-            {
-              "label": "Default · 4 cols",
-              "value": "container grid grid-cols-4"
-            }
+          "Container and Grid": [
+            { "label": "Default · 2 cols", "value": "container grid grid-cols-2" },
+            { "label": "Default · 3 cols", "value": "container grid grid-cols-3" },
+            { "label": "Default · 4 cols", "value": "container grid grid-cols-4" }
           ]
         }
       }
