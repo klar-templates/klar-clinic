@@ -182,7 +182,7 @@ setThemeToggle();
 
 // ToDo
 function toDo() {
-  console.log(test);
+  console.log('test');
   const STORAGE_KEY = "klar-todo-items";
   const listEl = document.querySelector("[data-todo-list]");
   const formEl = document.querySelector("[data-todo-form]");
