@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="sv"><head>
+<html lang="sv">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vårdkliniken Norden</title>
@@ -82,45 +83,7 @@
           </div>
         </div>
       </section>
-
-<section class="section">
-            <div class="container">
-              <div class="section-head">
-                <span class="eyebrow">Checklista</span>
-                <h2>Din att-göra-lista</h2>
-                <p>Håll koll på dina uppgifter och kom ihåg vad som behöver göras. Listan sparas i din webbläsare.</p>
-              </div>
-              <div class="todo-card">
-                <form class="todo-form">
-                  <input type="text" class="todo-input" placeholder="Lägg till en uppgift…" aria-label="Ny uppgift">
-                  <button type="submit" class="btn btn-primary">Lägg till</button>
-                </form>
-                <ul class="todo-list">
-                  <li class="todo-item">
-                    <div class="todo-checkbox" role="checkbox" tabindex="0" aria-checked="false">
-                      <svg class="todo-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    </div>
-                    <span class="todo-label">Boka tid för hälsoundersökning</span>
-                    <button class="todo-remove" aria-label="Ta bort uppgift" title="Ta bort">✕</button>
-                  </li>
-                  <li class="todo-item todo-item--done">
-                    <div class="todo-checkbox" role="checkbox" tabindex="0" aria-checked="true">
-                      <svg class="todo-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    </div>
-                    <span class="todo-label">Hämta recept på apoteket</span>
-                    <button class="todo-remove" aria-label="Ta bort uppgift" title="Ta bort">✕</button>
-                  </li>
-                </ul>
-                <div class="todo-empty" style="display: none;">
-                  Inga uppgifter än. Lägg till din första ovan!
-                </div>
-                <div class="todo-footer">
-                  <span>1 återstående</span>
-                  <button type="button" class="todo-clear">Ta bort avklarade</button>
-                </div>
-              </div>
-            </div>
-          </section><section class="todo-section">
+<section class="todo-section">
   <style>
     .todo-section {
       padding: var(--space-16) 0;
@@ -310,14 +273,14 @@
         <button type="submit" class="btn btn-primary">Lägg till</button>
       </form>
 
-      <ul class="todo-section__list" data-todo-list=""></ul>
+      <ul class="todo-section__list" data-todo-list=""><li class="todo-section__item"><div class="todo-section__checkbox" data-todo-toggle="0" role="checkbox" tabindex="0" aria-checked="false"><svg class="todo-section__check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span class="todo-section__label" data-todo-toggle="0">tes</span><button class="todo-section__remove" data-todo-remove="0" aria-label="Ta bort uppgift" title="Ta bort">✕</button></li></ul>
 
-      <div class="todo-section__empty" data-todo-empty="" style="display: block;">
+      <div class="todo-section__empty" data-todo-empty="" style="display: none;">
         Inga uppgifter än. Lägg till din första ovan!
       </div>
 
-      <div class="todo-section__footer" data-todo-footer="" style="display:none;">
-        <span data-todo-count="">0 återstående</span>
+      <div class="todo-section__footer" data-todo-footer="" style="display: flex;">
+        <span data-todo-count="">1 återstående</span>
         <button type="button" class="todo-section__clear" data-todo-clear="">Ta bort avklarade</button>
       </div>
     </div>
@@ -444,7 +407,30 @@
       render();
     })();
   </script>
-</section></main>
+</section>
+<section class="todo-section">
+            <div class="todo-section__container">
+              <div class="todo-section__head">
+                <span class="eyebrow">Checklista</span>
+                <h2>Din att-göra-lista</h2>
+                <p>Håll koll på dina uppgifter och kom ihåg vad som behöver göras. Listan sparas i din webbläsare.</p>
+              </div>
+              <div class="todo-section__card">
+                <form class="todo-section__form" data-todo-form="">
+                  <input type="text" class="todo-section__input" placeholder="Lägg till en uppgift…" data-todo-input="" aria-label="Ny uppgift">
+                  <button type="submit" class="btn btn-primary">Lägg till</button>
+                </form>
+                <ul class="todo-section__list" data-todo-list=""></ul>
+                <div class="todo-section__empty" data-todo-empty="" style="display: block;">
+                  Inga uppgifter än. Lägg till din första ovan!
+                </div>
+                <div class="todo-section__footer" data-todo-footer="" style="display:none;">
+                  <span data-todo-count="">0 återstående</span>
+                  <button type="button" class="todo-section__clear" data-todo-clear="">Ta bort avklarade</button>
+                </div>
+              </div>
+            </div>
+          </section></main>
     <footer class="site-footer">
       <div class="container">
         <div class="footer__grid">
@@ -480,5 +466,5 @@
         </div>
       </div>
     </footer>
-  
-</body></html>
+  </body>
+</html>
