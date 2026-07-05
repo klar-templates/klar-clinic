@@ -51,7 +51,7 @@
           <a class="nav-link" href="/events">Events</a>
           <a class="nav-link" href="/kontakt">Kontakt</a>
           <a class="nav__cta" href="/kontakt">Boka tid</a>
-          <button class="theme-toggle" aria-label="Växla tema" title="Växla ljus/mörkt tema">
+          <button class="theme-toggle" aria-label="Toggle theme" title="Växla ljus/mörkt tema">
             <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="5"></circle>
               <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -90,28 +90,32 @@
             <p class="ds-note">Semantiska färgtokens definierade i :root och .dark.</p>
             <div class="ds-swatches">
                 <div class="ds-swatch">
-                    <div class="ds-swatch__color" style="background: var(--background)"></div>
+                    <div class="ds-swatch__color bg-background"></div>
                     <div class="ds-swatch__label">Background</div>
                 </div>
                 <div class="ds-swatch">
-                    <div class="ds-swatch__color" style="background: var(--foreground)"></div>
+                    <div class="ds-swatch__color bg-foreground"></div>
                     <div class="ds-swatch__label">Foreground</div>
                 </div>
                 <div class="ds-swatch">
-                    <div class="ds-swatch__color" style="background: var(--card)"></div>
+                    <div class="ds-swatch__color bg-card"></div>
                     <div class="ds-swatch__label">Card</div>
                 </div>
                 <div class="ds-swatch">
-                    <div class="ds-swatch__color" style="background: var(--primary)"></div>
+                    <div class="ds-swatch__color bg-primary"></div>
                     <div class="ds-swatch__label">Primary</div>
                 </div>
                 <div class="ds-swatch">
-                    <div class="ds-swatch__color" style="background: var(--primary-dark)"></div>
+                    <div class="ds-swatch__color bg-primary-dark"></div>
                     <div class="ds-swatch__label">Primary Dark</div>
                 </div>
                 <div class="ds-swatch">
-                    <div class="ds-swatch__color" style="background: var(--accent)"></div>
+                    <div class="ds-swatch__color bg-accent"></div>
                     <div class="ds-swatch__label">Accent</div>
+                </div>
+                <div class="ds-swatch">
+                    <div class="ds-swatch__color bg-muted-soft"></div>
+                    <div class="ds-swatch__label">Muted Soft</div>
                 </div>
                 <div class="ds-swatch">
                     <div class="ds-swatch__color" style="background: var(--muted)"></div>
@@ -128,20 +132,20 @@
             <h2 class="ds-subhead">Typografi</h2>
             <p class="ds-note">Fraunces för rubriker, Inter för brödtext.</p>
             <div class="ds-type-row">
-                <span>H1 / 3.6rem</span>
-                <h1 style="font-size: 3.6rem; margin: 0;">Personlig vård</h1>
+                <span>H1 / 5xl</span>
+                <h1 class="font-serif text-5xl" style="margin: 0;">Personlig vård</h1>
             </div>
             <div class="ds-type-row">
-                <span>H2 / 2.6rem</span>
-                <h2 style="font-size: 2.6rem; margin: 0;">Våra behandlingar</h2>
+                <span>H2 / 4xl</span>
+                <h2 class="font-serif text-4xl" style="margin: 0;">Våra behandlingar</h2>
             </div>
             <div class="ds-type-row">
-                <span>H3 / 1.3rem</span>
-                <h3 style="font-size: 1.3rem; margin: 0;">Läkarbesök</h3>
+                <span>H3 / lg</span>
+                <h3 class="font-serif text-lg" style="margin: 0;">Läkarbesök</h3>
             </div>
             <div class="ds-type-row">
-                <span>Body / 1rem</span>
-                <p style="font-size: 1rem; margin: 0;">Modern och trygg vård med legitimerad personal.</p>
+                <span>Body / base</span>
+                <p class="text-base" style="margin: 0;">Modern och trygg vård med legitimerad personal.</p>
             </div>
         </section>
 
@@ -149,12 +153,12 @@
             <h2 class="ds-subhead">Spacing</h2>
             <p class="ds-note">Skala för marginaler och padding.</p>
             <div class="ds-scale">
-                <div style="width: 8px; height: 8px;">2</div>
-                <div style="width: 16px; height: 16px;">4</div>
-                <div style="width: 24px; height: 24px;">6</div>
-                <div style="width: 32px; height: 32px;">8</div>
-                <div style="width: 48px; height: 48px;">12</div>
-                <div style="width: 64px; height: 64px;">16</div>
+                <div class="w-2 h-2">2</div>
+                <div class="w-4 h-4">4</div>
+                <div class="w-6 h-6">6</div>
+                <div class="w-8 h-8">8</div>
+                <div class="w-12 h-12">12</div>
+                <div class="w-16 h-16">16</div>
             </div>
         </section>
 
@@ -162,9 +166,10 @@
             <h2 class="ds-subhead">Radie &amp; Skuggor</h2>
             <p class="ds-note">Rundade hörn och djup.</p>
             <div class="ds-radius-row">
-                <div class="ds-radius-box" style="border-radius: var(--radius-sm)"></div>
-                <div class="ds-radius-box" style="border-radius: var(--radius-lg)"></div>
-                <div class="ds-radius-box" style="border-radius: var(--radius-full)"></div>
+                <div class="ds-radius-box rounded-sm"></div>
+                <div class="ds-radius-box rounded-md"></div>
+                <div class="ds-radius-box rounded-lg"></div>
+                <div class="ds-radius-box rounded-full"></div>
             </div>
             <div class="ds-shadow-row">
                 <div class="ds-shadow-box shadow-md">Shadow MD</div>
@@ -478,8 +483,10 @@ Lör 09:00–13:00</p>
             { "label": "Items center", "value": "items-center" },
             { "label": "Justify center", "value": "justify-center" },
             { "label": "Justify between", "value": "justify-between" },
+            { "label": "Gap 2", "value": "gap-2" },
             { "label": "Gap 4", "value": "gap-4" },
             { "label": "Gap 6", "value": "gap-6" },
+            { "label": "Gap 8", "value": "gap-8" },
             { "label": "Grid", "value": "grid" },
             { "label": "Columns 2", "value": "grid-cols-2" },
             { "label": "Columns 3", "value": "grid-cols-3" },
@@ -487,25 +494,44 @@ Lör 09:00–13:00</p>
             { "label": "Vertical 8", "value": "py-8" },
             { "label": "Vertical 12", "value": "py-12" },
             { "label": "Vertical 16", "value": "py-16" },
+            { "label": "Padding 6", "value": "p-6" },
+            { "label": "Padding 8", "value": "p-8" },
             { "label": "Horizontal 6", "value": "px-6" },
             { "label": "Top 8", "value": "mt-8" },
             { "label": "Bottom 8", "value": "mb-8" },
             { "label": "Center horizontal", "value": "mx-auto" },
+            { "label": "Width 10", "value": "w-10" },
+            { "label": "Height 10", "value": "h-10" },
             { "label": "Align center", "value": "text-center" },
+            { "label": "XS", "value": "text-xs" },
             { "label": "Small", "value": "text-sm" },
+            { "label": "Base", "value": "text-base" },
+            { "label": "Medium", "value": "text-md" },
             { "label": "Large", "value": "text-lg" },
             { "label": "XL", "value": "text-xl" },
             { "label": "2XL", "value": "text-2xl" },
+            { "label": "3XL", "value": "text-3xl" },
+            { "label": "4XL", "value": "text-4xl" },
+            { "label": "5XL", "value": "text-5xl" },
             { "label": "Muted", "value": "text-muted-foreground" },
+            { "label": "Primary dark", "value": "text-primary-dark" },
             { "label": "Sans font", "value": "font-sans" },
             { "label": "Serif font", "value": "font-serif" },
             { "label": "Semibold", "value": "font-semibold" },
             { "label": "Bold", "value": "font-bold" },
             { "label": "Tight", "value": "leading-tight" },
+            { "label": "Background", "value": "bg-background" },
+            { "label": "Foreground", "value": "bg-foreground" },
             { "label": "Primary", "value": "bg-primary" },
+            { "label": "Primary dark", "value": "bg-primary-dark" },
             { "label": "Card surface", "value": "bg-card" },
+            { "label": "Accent", "value": "bg-accent" },
+            { "label": "Muted soft", "value": "bg-muted-soft" },
+            { "label": "Footer", "value": "bg-footer" },
             { "label": "Primary", "value": "text-primary" },
             { "label": "Body", "value": "text-foreground" },
+            { "label": "Small radius", "value": "rounded-sm" },
+            { "label": "Medium radius", "value": "rounded-md" },
             { "label": "Rounded", "value": "rounded-lg" },
             { "label": "Full", "value": "rounded-full" },
             { "label": "Shadow", "value": "shadow-md" },
@@ -514,8 +540,8 @@ Lör 09:00–13:00</p>
             { "label": "Container", "value": "container" }
           ],
           "Typography": [
-            { "label": "Heading 1", "value": "font-serif text-2xl font-bold leading-tight" },
-            { "label": "Heading 2", "value": "font-serif text-xl font-bold leading-tight" },
+            { "label": "Heading 1", "value": "font-serif text-5xl font-bold leading-tight" },
+            { "label": "Heading 2", "value": "font-serif text-4xl font-bold leading-tight" },
             { "label": "Heading 3", "value": "font-serif text-lg font-semibold leading-tight" },
             { "label": "Body", "value": "font-sans text-base font-normal" },
             { "label": "Small", "value": "font-sans text-sm font-normal" }
