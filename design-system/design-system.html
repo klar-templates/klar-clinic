@@ -28,7 +28,13 @@
         .ds-type-row span { font-size: 0.75rem; color: var(--muted); min-width: 120px; }
         .ds-m-0 { margin: 0; }
         .ds-scale { display: flex; gap: 1rem; align-items: flex-end; flex-wrap: wrap; }
-        .ds-scale > div { background: var(--accent); color: var(--primary-dark); border-radius: 4px; padding: 4px; font-size: 12px; }
+        .ds-scale-box { background: var(--accent); color: var(--primary-dark); border-radius: 4px; padding: 4px; font-size: 12px; display: flex; align-items: center; justify-content: center; }
+        .ds-scale-box--2 { width: var(--space-2); height: var(--space-2); }
+        .ds-scale-box--4 { width: var(--space-4); height: var(--space-4); }
+        .ds-scale-box--6 { width: var(--space-6); height: var(--space-6); }
+        .ds-scale-box--8 { width: var(--space-8); height: var(--space-8); }
+        .ds-scale-box--12 { width: var(--space-12); height: var(--space-12); }
+        .ds-scale-box--16 { width: var(--space-16); height: var(--space-16); }
         .ds-radius-row { display: flex; gap: 2rem; align-items: center; margin-bottom: 1rem; }
         .ds-radius-box { width: 80px; height: 80px; background: var(--accent); border: 1px solid var(--border); }
         .ds-shadow-row { display: flex; gap: 2rem; flex-wrap: wrap; }
@@ -155,12 +161,12 @@
             <h2 class="ds-subhead">Spacing</h2>
             <p class="ds-note">Skala för marginaler och padding.</p>
             <div class="ds-scale">
-                <div class="w-2 h-2">2</div>
-                <div class="w-4 h-4">4</div>
-                <div class="w-6 h-6">6</div>
-                <div class="w-8 h-8">8</div>
-                <div class="w-12 h-12">12</div>
-                <div class="w-16 h-16">16</div>
+                <div class="ds-scale-box ds-scale-box--2">2</div>
+                <div class="ds-scale-box ds-scale-box--4">4</div>
+                <div class="ds-scale-box ds-scale-box--6">6</div>
+                <div class="ds-scale-box ds-scale-box--8">8</div>
+                <div class="ds-scale-box ds-scale-box--12">12</div>
+                <div class="ds-scale-box ds-scale-box--16">16</div>
             </div>
         </section>
 
@@ -534,20 +540,6 @@ Lör 09:00–13:00</p>
             { "label": "Top 8", "value": "mt-8" },
             { "label": "Bottom 8", "value": "mb-8" },
             { "label": "Center horizontal", "value": "mx-auto" },
-            { "label": "Width 2", "value": "w-2" },
-            { "label": "Width 4", "value": "w-4" },
-            { "label": "Width 6", "value": "w-6" },
-            { "label": "Width 8", "value": "w-8" },
-            { "label": "Width 10", "value": "w-10" },
-            { "label": "Width 12", "value": "w-12" },
-            { "label": "Width 16", "value": "w-16" },
-            { "label": "Height 2", "value": "h-2" },
-            { "label": "Height 4", "value": "h-4" },
-            { "label": "Height 6", "value": "h-6" },
-            { "label": "Height 8", "value": "h-8" },
-            { "label": "Height 10", "value": "h-10" },
-            { "label": "Height 12", "value": "h-12" },
-            { "label": "Height 16", "value": "h-16" },
             { "label": "Align center", "value": "text-center" },
             { "label": "XS", "value": "text-xs" },
             { "label": "Small", "value": "text-sm" },
