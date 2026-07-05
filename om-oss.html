@@ -130,79 +130,79 @@
       </section>
       <section class="section">
         <style>
-      .vkn-testimonials__grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--space-8);
-      }
+          .vkn-testimonials__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-8);
+          }
 
-      .vkn-testimonial {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: var(--radius-lg);
-        padding: var(--space-8);
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-4);
-      }
+          .vkn-testimonial {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-8);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+          }
 
-      .vkn-testimonial__stars {
-        display: flex;
-        gap: 4px;
-        color: var(--primary);
-        font-size: 1.1rem;
-      }
+          .vkn-testimonial__stars {
+            display: flex;
+            gap: 4px;
+            color: var(--primary);
+            font-size: 1.1rem;
+          }
 
-      .vkn-testimonial__quote {
-        color: var(--muted);
-        font-size: 0.98rem;
-        line-height: 1.65;
-        flex: 1;
-      }
+          .vkn-testimonial__quote {
+            color: var(--muted);
+            font-size: 0.98rem;
+            line-height: 1.65;
+            flex: 1;
+          }
 
-      .vkn-testimonial__author {
-        display: flex;
-        align-items: center;
-        gap: var(--space-4);
-        margin-top: auto;
-      }
+          .vkn-testimonial__author {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            margin-top: auto;
+          }
 
-      .vkn-testimonial__avatar {
-        width: 48px;
-        height: 48px;
-        border-radius: var(--radius-full);
-        overflow: hidden;
-        flex-shrink: 0;
-      }
+          .vkn-testimonial__avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            flex-shrink: 0;
+          }
 
-      .vkn-testimonial__avatar img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+          .vkn-testimonial__avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
 
-      .vkn-testimonial__name {
-        font-weight: 600;
-        font-size: var(--text-sm);
-      }
+          .vkn-testimonial__name {
+            font-weight: 600;
+            font-size: var(--text-sm);
+          }
 
-      .vkn-testimonial__role {
-        color: var(--muted);
-        font-size: var(--text-xs);
-      }
+          .vkn-testimonial__role {
+            color: var(--muted);
+            font-size: var(--text-xs);
+          }
 
-      @media (max-width: 900px) {
-        .vkn-testimonials__grid {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
+          @media (max-width: 900px) {
+            .vkn-testimonials__grid {
+              grid-template-columns: 1fr 1fr;
+            }
+          }
 
-      @media (max-width: 620px) {
-        .vkn-testimonials__grid {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
+          @media (max-width: 620px) {
+            .vkn-testimonials__grid {
+              grid-template-columns: 1fr;
+            }
+          }
+        </style>
         <div class="container">
           <div class="section-head section-head--center">
             <span class="eyebrow">Röster från våra patienter</span>
@@ -314,6 +314,258 @@
             </div>
           </div>
         </div>
+      </section>
+      <section class="section vkn-gallery">
+        <style>
+          .vkn-gallery__head {
+            max-width: 620px;
+            margin-bottom: var(--space-12);
+          }
+
+          .vkn-gallery__head h2 {
+            font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+            margin-bottom: var(--space-4);
+          }
+
+          .vkn-gallery__head p {
+            color: var(--muted);
+            font-size: 1.05rem;
+          }
+
+          .vkn-gallery__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 260px;
+            gap: var(--space-6);
+          }
+
+          .vkn-gallery__item {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition);
+          }
+
+          .vkn-gallery__item:hover {
+            transform: translateY(-4px);
+          }
+
+          .vkn-gallery__item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+          }
+
+          .vkn-gallery__item:hover img {
+            transform: scale(1.06);
+          }
+
+          .vkn-gallery__item--wide {
+            grid-column: span 2;
+          }
+
+          .vkn-gallery__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.62) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: var(--space-6);
+            opacity: 0;
+            transition: opacity var(--transition);
+          }
+
+          .vkn-gallery__item:hover .vkn-gallery__overlay {
+            opacity: 1;
+          }
+
+          .vkn-gallery__caption {
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.35;
+          }
+
+          /* Lightbox */
+          .vkn-gallery__lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.88);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-8);
+            animation: vkn-gallery-fade 0.2s ease;
+          }
+
+          .vkn-gallery__lightbox.open {
+            display: flex;
+          }
+
+          .vkn-gallery__lightbox img {
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: var(--radius-lg);
+            object-fit: contain;
+          }
+
+          .vkn-gallery__lightbox-close {
+            position: absolute;
+            top: var(--space-6);
+            right: var(--space-6);
+            width: 46px;
+            height: 46px;
+            border-radius: var(--radius-full);
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            transition: background var(--transition);
+          }
+
+          .vkn-gallery__lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.28);
+          }
+
+          @keyframes vkn-gallery-fade {
+            from {
+              opacity: 0;
+            }
+
+            to {
+              opacity: 1;
+            }
+          }
+
+          @media (max-width: 800px) {
+            .vkn-gallery__grid {
+              grid-template-columns: 1fr 1fr;
+              grid-auto-rows: 200px;
+            }
+
+            .vkn-gallery__item--wide {
+              grid-column: span 2;
+            }
+          }
+
+          @media (max-width: 520px) {
+            .vkn-gallery__grid {
+              grid-template-columns: 1fr;
+              grid-auto-rows: 220px;
+            }
+
+            .vkn-gallery__item--wide {
+              grid-column: span 1;
+            }
+          }
+        </style>
+
+        <div class="container">
+          <div class="vkn-gallery__head">
+            <span class="eyebrow">Galleri</span>
+            <h2>En glimt av kliniken</h2>
+            <p>Upptäck våra ljusa och välkomnande lokaler, utrustade för trygg och modern vård.</p>
+          </div>
+
+          <div class="vkn-gallery__grid">
+            <div class="vkn-gallery__item vkn-gallery__item--wide"
+              data-full="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&amp;fit=crop&amp;w=1600&amp;q=80">
+              <img
+                src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&amp;fit=crop&amp;w=1600&amp;q=80"
+                alt="Välkomnande klinikreception med ljusa ytor">
+              <div class="vkn-gallery__overlay">
+                <span class="vkn-gallery__caption">Vår ljusa reception</span>
+              </div>
+            </div>
+
+            <div class="vkn-gallery__item"
+              data-full="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&amp;fit=crop&amp;w=1600&amp;q=80">
+              <img
+                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&amp;fit=crop&amp;w=1600&amp;q=80"
+                alt="Modernt behandlingsrum">
+              <div class="vkn-gallery__overlay">
+                <span class="vkn-gallery__caption">Behandlingsrum</span>
+              </div>
+            </div>
+
+            <div class="vkn-gallery__item"
+              data-full="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&amp;fit=crop&amp;w=1600&amp;q=80">
+              <img
+                src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&amp;fit=crop&amp;w=1600&amp;q=80"
+                alt="Läkare i samtal med patient">
+              <div class="vkn-gallery__overlay">
+                <span class="vkn-gallery__caption">Läkarsamtal</span>
+              </div>
+            </div>
+
+            <div class="vkn-gallery__item"
+              data-full="https://images.unsplash.com/photo-1584516150909-c43483ee7932?auto=format&amp;fit=crop&amp;w=1600&amp;q=80">
+              <img
+                src="https://images.unsplash.com/photo-1584516150909-c43483ee7932?auto=format&amp;fit=crop&amp;w=1600&amp;q=80"
+                alt="Väntingsrum med bekväma stolar">
+              <div class="vkn-gallery__overlay">
+                <span class="vkn-gallery__caption">Bekväma väntrum</span>
+              </div>
+            </div>
+
+            <div class="vkn-gallery__item vkn-gallery__item--wide"
+              data-full="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&amp;fit=crop&amp;w=1600&amp;q=80">
+              <img
+                src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&amp;fit=crop&amp;w=1600&amp;q=80"
+                alt="Modern medicinsk utrustning">
+              <div class="vkn-gallery__overlay">
+                <span class="vkn-gallery__caption">Modern utrustning</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="vkn-gallery__lightbox" role="dialog" aria-modal="true" aria-label="Stor bildvy">
+          <button class="vkn-gallery__lightbox-close" aria-label="Stäng">×</button>
+          <img src="" alt="" class="vkn-gallery__lightbox-img">
+        </div>
+
+        <script>
+          (function() {
+            var items = document.querySelectorAll('.vkn-gallery__item');
+            var lightbox = document.querySelector('.vkn-gallery__lightbox');
+            var lbImg = lightbox.querySelector('img');
+
+            items.forEach(function(item) {
+              item.addEventListener('click', function() {
+                var full = item.getAttribute('data-full');
+                var alt = item.querySelector('img').getAttribute('alt');
+                lbImg.src = full;
+                lbImg.alt = alt;
+                lightbox.classList.add('open');
+              });
+            });
+
+            function close() {
+              lightbox.classList.remove('open');
+              lbImg.src = '';
+            }
+
+            lightbox.addEventListener('click', function(e) {
+              if (e.target === lightbox || e.target.classList.contains('vkn-gallery__lightbox-close')) {
+                close();
+              }
+            });
+
+            document.addEventListener('keydown', function(e) {
+              if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+                close();
+              }
+            });
+          })();
+        </script>
       </section>
     </main>
     <footer class="site-footer">
