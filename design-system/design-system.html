@@ -116,7 +116,7 @@
 
       .ds-scale-box {
         background: var(--accent);
-        color: var(--primary-dark);
+        color: var(--primary);
         border-radius: 4px;
         padding: 4px;
         font-size: 12px;
@@ -195,7 +195,7 @@
         padding: 6px 12px;
         border-radius: 999px;
         background: var(--accent);
-        color: var(--primary-dark);
+        color: var(--primary);
         font-size: 12px;
         font-weight: 600;
         margin-bottom: 1rem;
@@ -327,19 +327,19 @@
         <p class="ds-note">Fraunces för rubriker, Inter för brödtext.</p>
         <div class="ds-type-row">
           <span>H1 / 5xl</span>
-          <h1 class="font-serif text-5xl ds-m-0">Personlig vård</h1>
+          <h1 class="font-serif text-5xl font-medium leading-tight ds-m-0">Personlig vård</h1>
         </div>
         <div class="ds-type-row">
           <span>H2 / 4xl</span>
-          <h2 class="font-serif text-4xl ds-m-0">Våra behandlingar</h2>
+          <h2 class="font-serif text-4xl font-medium leading-tight ds-m-0">Våra behandlingar</h2>
         </div>
         <div class="ds-type-row">
-          <span>H3 / lg</span>
-          <h3 class="font-serif text-lg ds-m-0">Läkarbesök</h3>
+          <span>H3 / 2xl</span>
+          <h3 class="font-serif text-2xl font-medium leading-tight ds-m-0">Läkarbesök</h3>
         </div>
         <div class="ds-type-row">
           <span>Body / base</span>
-          <p class="text-base ds-m-0">Modern och trygg vård med legitimerad personal.</p>
+          <p class="text-base font-normal ds-m-0">Modern och trygg vård med legitimerad personal.</p>
         </div>
       </section>
 
@@ -360,6 +360,7 @@
         <h2 class="ds-subhead">Radie &amp; Skuggor</h2>
         <p class="ds-note">Rundade hörn och djup.</p>
         <div class="ds-radius-row">
+          <div class="ds-radius-box rounded-xs"></div>
           <div class="ds-radius-box rounded-sm"></div>
           <div class="ds-radius-box rounded-md"></div>
           <div class="ds-radius-box rounded-lg"></div>
@@ -403,6 +404,18 @@
           <button class="btn btn-outline" data-klar-ds-label="Outline Button">Outline Button</button>
         </div>
 
+        <h3 class="ds-subhead ds-subhead--minor">Nav Links</h3>
+        <div class="ds-specimens" data-klar-ds-elements="nav-links" data-klar-ds-label="Nav Links">
+          <a class="nav-link" href="#" data-klar-ds-label="Default Nav Link">Nav Link</a>
+          <a class="nav-link active" href="#" data-klar-ds-label="Active Nav Link">Active Nav Link</a>
+          <a class="nav__cta" href="#" data-klar-ds-label="Nav CTA">Nav CTA</a>
+        </div>
+
+        <h3 class="ds-subhead ds-subhead--minor">CTA Links</h3>
+        <div class="ds-specimens" data-klar-ds-elements="cta-links" data-klar-ds-label="CTA Links">
+          <a class="cta-link" href="#" data-klar-ds-label="CTA Link">Läs mer →</a>
+        </div>
+
         <h3 class="ds-subhead ds-subhead--minor">Tags</h3>
         <div class="ds-specimens" data-klar-ds-elements="tags" data-klar-ds-label="Tags">
           <span class="tag" data-klar-ds-label="Default Tag">1 295 kr</span>
@@ -426,6 +439,18 @@
               </div>
             </div>
           </article>
+        </div>
+
+        <h3 class="ds-subhead ds-subhead--minor">Forms</h3>
+        <div class="ds-specimens--grid" data-klar-ds-elements="forms" data-klar-ds-label="Forms">
+          <div class="field" data-klar-ds-label="Text Input">
+            <label for="ds-name">Namn</label>
+            <input class="input" id="ds-name" type="text" placeholder="Ditt namn">
+          </div>
+          <div class="field" data-klar-ds-label="Textarea">
+            <label for="ds-msg">Meddelande</label>
+            <textarea class="textarea" id="ds-msg" placeholder="Ditt meddelande"></textarea>
+          </div>
         </div>
 
         <h3 class="ds-subhead ds-subhead--minor">Containers</h3>
@@ -746,6 +771,7 @@
             { "label": "Items center", "value": "items-center" },
             { "label": "Justify center", "value": "justify-center" },
             { "label": "Justify between", "value": "justify-between" },
+            { "label": "Gap 1", "value": "gap-1" },
             { "label": "Gap 2", "value": "gap-2" },
             { "label": "Gap 3", "value": "gap-3" },
             { "label": "Gap 4", "value": "gap-4" },
@@ -762,6 +788,9 @@
             { "label": "Vertical 12", "value": "py-12" },
             { "label": "Vertical 16", "value": "py-16" },
             { "label": "Vertical 20", "value": "py-20" },
+            { "label": "Top 20", "value": "pt-20" },
+            { "label": "Bottom 12", "value": "pb-12" },
+            { "label": "Padding 1", "value": "p-1" },
             { "label": "Padding 3", "value": "p-3" },
             { "label": "Padding 6", "value": "p-6" },
             { "label": "Padding 8", "value": "p-8" },
@@ -769,6 +798,7 @@
             { "label": "Horizontal 5", "value": "px-5" },
             { "label": "Horizontal 6", "value": "px-6" },
             { "label": "Horizontal 7", "value": "px-7" },
+            { "label": "Horizontal 12", "value": "px-12" },
             { "label": "Top 8", "value": "mt-8" },
             { "label": "Bottom 8", "value": "mb-8" },
             { "label": "Center horizontal", "value": "mx-auto" },
@@ -783,15 +813,27 @@
             { "label": "3XL", "value": "text-3xl" },
             { "label": "4XL", "value": "text-4xl" },
             { "label": "5XL", "value": "text-5xl" },
+            { "label": "Hero H1", "value": "text-hero-h1" },
+            { "label": "Section H2", "value": "text-section-h2" },
+            { "label": "CTA H2", "value": "text-cta-h2" },
+            { "label": "Pagehead H1", "value": "text-pagehead-h1" },
+            { "label": "About H2", "value": "text-about-h2" },
             { "label": "Muted", "value": "text-muted-foreground" },
+            { "label": "Primary", "value": "text-primary" },
             { "label": "Primary dark", "value": "text-primary-dark" },
+            { "label": "Primary foreground soft", "value": "text-primary-foreground-soft" },
             { "label": "Danger", "value": "text-danger" },
             { "label": "Sans font", "value": "font-sans" },
             { "label": "Serif font", "value": "font-serif" },
+            { "label": "Mono font", "value": "font-mono" },
             { "label": "Normal", "value": "font-normal" },
+            { "label": "Medium", "value": "font-medium" },
             { "label": "Semibold", "value": "font-semibold" },
             { "label": "Bold", "value": "font-bold" },
             { "label": "Tight", "value": "leading-tight" },
+            { "label": "Uppercase", "value": "uppercase" },
+            { "label": "Tracking wider", "value": "tracking-wider" },
+            { "label": "Tracking widest", "value": "tracking-widest" },
             { "label": "Background", "value": "bg-background" },
             { "label": "Foreground", "value": "bg-foreground" },
             { "label": "Primary", "value": "bg-primary" },
@@ -803,17 +845,35 @@
             { "label": "Border", "value": "bg-border" },
             { "label": "Footer", "value": "bg-footer" },
             { "label": "Danger", "value": "bg-danger" },
-            { "label": "Primary", "value": "text-primary" },
+            { "label": "White", "value": "bg-white" },
+            { "label": "White hover", "value": "bg-white-hover" },
             { "label": "Body", "value": "text-foreground" },
+            { "label": "Extra small radius", "value": "rounded-xs" },
             { "label": "Small radius", "value": "rounded-sm" },
             { "label": "Medium radius", "value": "rounded-md" },
             { "label": "Rounded", "value": "rounded-lg" },
             { "label": "Full", "value": "rounded-full" },
             { "label": "Shadow", "value": "shadow-md" },
             { "label": "Border", "value": "border" },
+            { "label": "Footer border", "value": "border-footer" },
             { "label": "Hidden", "value": "hidden" },
             { "label": "Prose", "value": "prose" },
             { "label": "Container", "value": "container" },
+            { "label": "Width 5", "value": "w-5" },
+            { "label": "Height 5", "value": "h-5" },
+            { "label": "Width 10", "value": "w-10" },
+            { "label": "Height 10", "value": "h-10" },
+            { "label": "Min height 32", "value": "min-h-32" },
+            { "label": "Aspect 4:5", "value": "aspect-4-5" },
+            { "label": "Aspect 16:11", "value": "aspect-16-11" },
+            { "label": "Aspect 16:10", "value": "aspect-16-10" },
+            { "label": "Aspect 5:6", "value": "aspect-5-6" },
+            { "label": "Aspect 1:1", "value": "aspect-1" },
+            { "label": "Max width prose", "value": "max-w-prose" },
+            { "label": "Max width hero intro", "value": "max-w-hero-intro" },
+            { "label": "Max width section head", "value": "max-w-section-head" },
+            { "label": "Max width cta", "value": "max-w-cta" },
+            { "label": "Max width footer text", "value": "max-w-footer-text" },
             { "label": "Columns 2", "value": "md:grid-cols-2" },
             { "label": "Columns 3", "value": "md:grid-cols-3" },
             { "label": "Columns 4", "value": "md:grid-cols-4" },
@@ -821,11 +881,15 @@
             { "label": "Hidden", "value": "md:hidden" }
           ],
           "Typography": [
-            { "label": "Heading 1", "value": "font-serif text-5xl font-bold leading-tight" },
-            { "label": "Heading 2", "value": "font-serif text-4xl font-bold leading-tight" },
-            { "label": "Heading 3", "value": "font-serif text-lg font-semibold leading-tight" },
+            { "label": "Display", "value": "font-serif text-5xl font-medium leading-tight" },
+            { "label": "Heading 1", "value": "font-serif text-4xl font-medium leading-tight" },
+            { "label": "Heading 2", "value": "font-serif text-3xl font-medium leading-tight" },
+            { "label": "Heading 3", "value": "font-serif text-2xl font-medium leading-tight" },
+            { "label": "Heading 4", "value": "font-serif text-lg font-semibold leading-tight" },
+            { "label": "Lead", "value": "font-sans text-lg font-normal" },
             { "label": "Body", "value": "font-sans text-base font-normal" },
-            { "label": "Small", "value": "font-sans text-sm font-normal" }
+            { "label": "Small", "value": "font-sans text-sm font-normal" },
+            { "label": "Meta", "value": "font-sans text-sm font-semibold uppercase tracking-widest" }
           ],
           "Grid": [
             { "label": "2 columns", "value": "grid grid-cols-2" },
