@@ -177,6 +177,94 @@
           </div>
         </div>
       </section>
+      <section class="section vkn-events">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Kalender</span>
+            <h2>Kommande event</h2>
+            <p>
+              Håll dig uppdaterad om våra workshops, föreläsningar och
+              hälsokvällar. Välkommen att delta!
+            </p>
+          </div>
+          <div id="vkn-event-list" class="card-grid">
+            
+            <article class="card vkn-event-card">
+              <div class="card__media">
+                <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?ixid=M3w5ODc2NzB8MHwxfHNlYXJjaHwyNHx8ZXZlbnR8ZW58MXx8fHwxNzgzMTU1ODQ0fDA&amp;ixlib=rb-4.1.0&amp;w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="Föreläsning om sömn och stress på Vårdkliniken Norden">
+              </div>
+              <div class="card__body">
+                <span class="tag vkn-event-card__category">Öppet hus</span>
+                <h3>Kvällens tema: Sömn, stress och återhämtning</h3>
+                <p class="card__desc">En kostnadsfri kväll för dig som vill förstå hur vardagens stress påverkar kroppen — och få konkreta verktyg för bättre sömn och varaktig återhämtning.</p>
+                <div class="card__meta">
+                  <span class="tag">Torsdag 26 mars 2026</span>
+                  <span class="tag tag-muted">18:00–20:30</span>
+                  <span class="tag tag-muted">Vårdkliniken Norden, Storgatan 12, Stockholm</span>
+                </div>
+                <a class="cta-link vkn-event-card__link" href="/events/stress-tema.html">Läs mer →</a>
+              </div>
+            </article>
+            
+            <article class="card vkn-event-card">
+              <div class="card__media">
+                <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixid=M3w5ODc2NzB8MHwxfHNlYXJjaHw0fHxldmVudHxlbnwxfHx8fDE3ODMxNTU4NDR8MA&amp;ixlib=rb-4.1.0&amp;w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="Föreläsning om sömn och stress på Vårdkliniken Norden">
+              </div>
+              <div class="card__body">
+                <span class="tag vkn-event-card__category">Öppet hus</span>
+                <h3>Kvällens tema: Sömn, stress och återhämtning</h3>
+                <p class="card__desc">En kostnadsfri kväll för dig som vill förstå hur vardagens stress påverkar kroppen — och få konkreta verktyg för bättre sömn och varaktig återhämtning.</p>
+                <div class="card__meta">
+                  <span class="tag">Torsdag 26 mars 2026</span>
+                  <span class="tag tag-muted">18:00–20:30</span>
+                  <span class="tag tag-muted">Vårdkliniken Norden, Storgatan 12, Stockholm</span>
+                </div>
+                <a class="cta-link vkn-event-card__link" href="/events/somn-event.html">Läs mer →</a>
+              </div>
+            </article>
+            
+            <article class="card vkn-event-card">
+              <div class="card__media">
+                <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixid=M3w5ODc2NzB8MHwxfHNlYXJjaHwxMnx8ZXZlbnR8ZW58MXx8fHwxNzgzMTU1ODQ0fDA&amp;ixlib=rb-4.1.0&amp;w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="Event">
+              </div>
+              <div class="card__body">
+                <span class="tag vkn-event-card__category">Event</span>
+                <h3>Ängsviksmässan är här</h3>
+                <p class="card__desc">Alla som vill komma är välkomna.</p>
+                <div class="card__meta">
+                  <span class="tag">15 mars 2026</span>
+                  <span class="tag tag-muted">18:00</span>
+                  <span class="tag tag-muted">Klinikens lokaler</span>
+                </div>
+                <a class="cta-link vkn-event-card__link" href="/events/angsviks-massan.html">Läs mer →</a>
+              </div>
+            </article>
+            
+          </div>
+          <template data-for="vkn-event-list" data-query="list('event', { order: 'eventDate:asc', limit: 6 })">
+            {% for item in items %}
+            <article class="card vkn-event-card">
+              <div class="card__media">
+                <img src="{{ item.content.image.src  }}" alt="{{ item.content.image.alt  }}">
+              </div>
+              <div class="card__body">
+                <span class="tag vkn-event-card__category">{{ item.content.category  }}</span>
+                <h3>{{ item.content.title }}</h3>
+                <p class="card__desc">{{ item.content.description }}</p>
+                <div class="card__meta">
+                  <span class="tag">{{ item.content.eventDate  }}</span>
+                  <span class="tag tag-muted">{{ item.content.time  }}</span>
+                  <span class="tag tag-muted">{{ item.content.location  }}</span>
+                </div>
+                <a class="cta-link vkn-event-card__link" href="{{ item.url }}">Läs mer →</a>
+              </div>
+            </article>
+            {% else %}
+            <p class="vkn-events__empty">Inga kommande event just nu. Återkom snart!</p>
+            {% endfor %}
+          </template>
+        </div>
+      </section>
       <section class="section vkn-faq" id="faq">
         <style>
           .vkn-faq__list {
@@ -399,94 +487,6 @@
             });
           });
         </script>
-      </section>
-      <section class="section vkn-events">
-        <div class="container">
-          <div class="section-head">
-            <span class="eyebrow">Kalender</span>
-            <h2>Kommande event</h2>
-            <p>
-              Håll dig uppdaterad om våra workshops, föreläsningar och
-              hälsokvällar. Välkommen att delta!
-            </p>
-          </div>
-          <div id="vkn-event-list" class="card-grid">
-            
-            <article class="card vkn-event-card">
-              <div class="card__media">
-                <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?ixid=M3w5ODc2NzB8MHwxfHNlYXJjaHwyNHx8ZXZlbnR8ZW58MXx8fHwxNzgzMTU1ODQ0fDA&amp;ixlib=rb-4.1.0&amp;w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="Föreläsning om sömn och stress på Vårdkliniken Norden">
-              </div>
-              <div class="card__body">
-                <span class="tag vkn-event-card__category">Öppet hus</span>
-                <h3>Kvällens tema: Sömn, stress och återhämtning</h3>
-                <p class="card__desc">En kostnadsfri kväll för dig som vill förstå hur vardagens stress påverkar kroppen — och få konkreta verktyg för bättre sömn och varaktig återhämtning.</p>
-                <div class="card__meta">
-                  <span class="tag">Torsdag 26 mars 2026</span>
-                  <span class="tag tag-muted">18:00–20:30</span>
-                  <span class="tag tag-muted">Vårdkliniken Norden, Storgatan 12, Stockholm</span>
-                </div>
-                <a class="cta-link vkn-event-card__link" href="/events/stress-tema.html">Läs mer →</a>
-              </div>
-            </article>
-            
-            <article class="card vkn-event-card">
-              <div class="card__media">
-                <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixid=M3w5ODc2NzB8MHwxfHNlYXJjaHw0fHxldmVudHxlbnwxfHx8fDE3ODMxNTU4NDR8MA&amp;ixlib=rb-4.1.0&amp;w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="Föreläsning om sömn och stress på Vårdkliniken Norden">
-              </div>
-              <div class="card__body">
-                <span class="tag vkn-event-card__category">Öppet hus</span>
-                <h3>Kvällens tema: Sömn, stress och återhämtning</h3>
-                <p class="card__desc">En kostnadsfri kväll för dig som vill förstå hur vardagens stress påverkar kroppen — och få konkreta verktyg för bättre sömn och varaktig återhämtning.</p>
-                <div class="card__meta">
-                  <span class="tag">Torsdag 26 mars 2026</span>
-                  <span class="tag tag-muted">18:00–20:30</span>
-                  <span class="tag tag-muted">Vårdkliniken Norden, Storgatan 12, Stockholm</span>
-                </div>
-                <a class="cta-link vkn-event-card__link" href="/events/somn-event.html">Läs mer →</a>
-              </div>
-            </article>
-            
-            <article class="card vkn-event-card">
-              <div class="card__media">
-                <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixid=M3w5ODc2NzB8MHwxfHNlYXJjaHwxMnx8ZXZlbnR8ZW58MXx8fHwxNzgzMTU1ODQ0fDA&amp;ixlib=rb-4.1.0&amp;w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="Event">
-              </div>
-              <div class="card__body">
-                <span class="tag vkn-event-card__category">Event</span>
-                <h3>Ängsviksmässan är här</h3>
-                <p class="card__desc">Alla som vill komma är välkomna.</p>
-                <div class="card__meta">
-                  <span class="tag">15 mars 2026</span>
-                  <span class="tag tag-muted">18:00</span>
-                  <span class="tag tag-muted">Klinikens lokaler</span>
-                </div>
-                <a class="cta-link vkn-event-card__link" href="/events/angsviks-massan.html">Läs mer →</a>
-              </div>
-            </article>
-            
-          </div>
-          <template data-for="vkn-event-list" data-query="list('event', { order: 'eventDate:asc', limit: 6 })">
-            {% for item in items %}
-            <article class="card vkn-event-card">
-              <div class="card__media">
-                <img src="{{ item.content.image.src  }}" alt="{{ item.content.image.alt  }}">
-              </div>
-              <div class="card__body">
-                <span class="tag vkn-event-card__category">{{ item.content.category  }}</span>
-                <h3>{{ item.content.title }}</h3>
-                <p class="card__desc">{{ item.content.description }}</p>
-                <div class="card__meta">
-                  <span class="tag">{{ item.content.eventDate  }}</span>
-                  <span class="tag tag-muted">{{ item.content.time  }}</span>
-                  <span class="tag tag-muted">{{ item.content.location  }}</span>
-                </div>
-                <a class="cta-link vkn-event-card__link" href="{{ item.url }}">Läs mer →</a>
-              </div>
-            </article>
-            {% else %}
-            <p class="vkn-events__empty">Inga kommande event just nu. Återkom snart!</p>
-            {% endfor %}
-          </template>
-        </div>
       </section>
       <section class="section">
         <div class="container">
