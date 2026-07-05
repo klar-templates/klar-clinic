@@ -308,3 +308,4 @@ function toDo() {
 
   render();
 }
+toDo();
