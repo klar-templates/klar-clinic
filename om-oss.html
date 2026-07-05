@@ -1,12 +1,16 @@
-<!DOCTYPE html><html lang="sv"><head>
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vårdkliniken Norden</title>
-    
+
     <!-- Fonts present at first paint → no flicker. Preload URL must match the
        @font-face src exactly (both crossorigin) or the browser fetches twice. -->
-    <link rel="preload" as="font" type="font/woff2" crossorigin="" href="https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin="" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin=""
+      href="https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin=""
+      href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2">
     <style>
       /* Fraunces — variable file, one latin subset covers 400–600 */
       @font-face {
@@ -28,7 +32,7 @@
         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
       }
     </style>
-    
+
     <link rel="stylesheet" href="/style.css">
     <link rel="icon" href="/images/favicon.png">
     <script type="module" src="/script.js"></script>
@@ -46,7 +50,8 @@
           <a class="nav-link" href="/kontakt">Kontakt</a>
           <a class="nav__cta" href="/kontakt">Boka tid</a>
           <button class="theme-toggle" aria-label="Växla tema" title="Växla ljus/mörkt tema">
-            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="5"></circle>
               <line x1="12" y1="1" x2="12" y2="3"></line>
               <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -57,7 +62,8 @@
               <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
               <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
-            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
           </button>
@@ -78,7 +84,9 @@
       <section class="section py-8">
         <div class="container about-grid">
           <div class="about__media">
-            <img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Vårt team på kliniken">
+            <img
+              src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&amp;fit=crop&amp;w=1600&amp;q=80"
+              alt="Vårt team på kliniken">
           </div>
           <div class="about__text">
             <h2>Vård som sätter människan främst</h2>
@@ -121,6 +129,146 @@
         </div>
       </section>
       <section class="section">
+        <style>
+      .vkn-testimonials__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-8);
+      }
+
+      .vkn-testimonial {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: var(--space-8);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+      }
+
+      .vkn-testimonial__stars {
+        display: flex;
+        gap: 4px;
+        color: var(--primary);
+        font-size: 1.1rem;
+      }
+
+      .vkn-testimonial__quote {
+        color: var(--muted);
+        font-size: 0.98rem;
+        line-height: 1.65;
+        flex: 1;
+      }
+
+      .vkn-testimonial__author {
+        display: flex;
+        align-items: center;
+        gap: var(--space-4);
+        margin-top: auto;
+      }
+
+      .vkn-testimonial__avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: var(--radius-full);
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .vkn-testimonial__avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .vkn-testimonial__name {
+        font-weight: 600;
+        font-size: var(--text-sm);
+      }
+
+      .vkn-testimonial__role {
+        color: var(--muted);
+        font-size: var(--text-xs);
+      }
+
+      @media (max-width: 900px) {
+        .vkn-testimonials__grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .vkn-testimonials__grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+        <div class="container">
+          <div class="section-head section-head--center">
+            <span class="eyebrow">Röster från våra patienter</span>
+            <h2>Vad våra patienter säger</h2>
+            <p>
+              Vi är stolta över förtroendet våra patienter ger oss. Här är vad några av dem delar om sina upplevelser.
+            </p>
+          </div>
+          <div class="vkn-testimonials__grid">
+            <div class="vkn-testimonial">
+              <div class="vkn-testimonial__stars">★★★★★</div>
+              <p class="vkn-testimonial__quote">
+                Jag har aldrig känt mig så sedd på en läkarmottagning. Läkaren tog sig tid att lyssna och förklara allt
+                lugnt och tydligt. Det gör stor skillnad när man är orolig.
+              </p>
+              <div class="vkn-testimonial__author">
+                <div class="vkn-testimonial__avatar">
+                  <img
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80"
+                    alt="Karin Eklund">
+                </div>
+                <div>
+                  <div class="vkn-testimonial__name">Karin Eklund</div>
+                  <div class="vkn-testimonial__role">Patient sedan 2021</div>
+                </div>
+              </div>
+            </div>
+            <div class="vkn-testimonial">
+              <div class="vkn-testimonial__stars">★★★★★</div>
+              <p class="vkn-testimonial__quote">
+                Snabb bokning, kort väntan och professionell behandling. Jag behövde en hälsoundersökning inför ett nytt
+                jobb och allt fixades på en vecka. Mycket nöjd!
+              </p>
+              <div class="vkn-testimonial__author">
+                <div class="vkn-testimonial__avatar">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
+                    alt="Andreas Bergström">
+                </div>
+                <div>
+                  <div class="vkn-testimonial__name">Andreas Bergström</div>
+                  <div class="vkn-testimonial__role">Patient sedan 2023</div>
+                </div>
+              </div>
+            </div>
+            <div class="vkn-testimonial">
+              <div class="vkn-testimonial__stars">★★★★★</div>
+              <p class="vkn-testimonial__quote">
+                Min hudkontroll var nog den mest trygga läkarupplevelse jag haft. Specialisten var grundlig och kunnig,
+                och jag kände mig verkligen i säkra händer. Rekommenderar varmt!
+              </p>
+              <div class="vkn-testimonial__author">
+                <div class="vkn-testimonial__avatar">
+                  <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80"
+                    alt="Sofia Hjälm">
+                </div>
+                <div>
+                  <div class="vkn-testimonial__name">Sofia Hjälm</div>
+                  <div class="vkn-testimonial__role">Patient sedan 2022</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
         <div class="container">
           <div class="section-head section-head--center">
             <span class="eyebrow">Vårt team</span>
@@ -133,7 +281,9 @@
           <div class="team-grid">
             <div class="member">
               <div class="member__photo">
-                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Dr. Anna Lindqvist">
+                <img
+                  src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+                  alt="Dr. Anna Lindqvist">
               </div>
               <h3>Dr. Anna Lindqvist</h3>
               <div class="member__role">
@@ -142,7 +292,9 @@
             </div>
             <div class="member">
               <div class="member__photo">
-                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Erik Sandström">
+                <img
+                  src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
+                  alt="Erik Sandström">
               </div>
               <h3>Erik Sandström</h3>
               <div class="member__role">
@@ -151,7 +303,9 @@
             </div>
             <div class="member">
               <div class="member__photo">
-                <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixid=M3w5ODc2NzB8MHwxfHNlYXJjaHwxMXx8ZG9jdG9yfGVufDF8fHx8MTc4MjY1NzYzM3ww&amp;ixlib=rb-4.1.0&amp;w=1600&amp;q=80&amp;auto=format&amp;fit=crop" alt="Dr. Maria Holm">
+                <img
+                  src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixid=M3w5ODc2NzB8MHwxfHNlYXJjaHwxMXx8ZG9jdG9yfGVufDF8fHx8MTc4MjY1NzYzM3ww&amp;ixlib=rb-4.1.0&amp;w=1600&amp;q=80&amp;auto=format&amp;fit=crop"
+                  alt="Dr. Maria Holm">
               </div>
               <h3>Dr. Maria Holm</h3>
               <div class="member__role">
@@ -198,5 +352,6 @@
       </div>
     </footer>
 
-  
-</body></html>
+
+  </body>
+</html>
