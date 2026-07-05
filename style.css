@@ -9,7 +9,6 @@
   --color-accent-dark: #245f53;
   --color-accent-soft: #e3efeb;
   --color-border: #e6e2d8;
-  --color-danger: #c5544a;
 
   --background: var(--color-bg);
   --foreground: var(--color-ink);
@@ -25,8 +24,6 @@
   --footer-fg: #cdd6d3;
   --footer-heading: #ffffff;
   --footer-muted: #93a39e;
-  --danger: var(--color-danger);
-  --danger-soft: rgba(197, 84, 74, 0.1);
 
   --font-sans: "Inter", system-ui, sans-serif;
   --font-serif: "Fraunces", Georgia, serif;
@@ -81,8 +78,6 @@
   --footer-bg: #11161a;
   --footer-fg: #9ca7af;
   --footer-heading: #ffffff;
-  --danger: #e5756b;
-  --danger-soft: rgba(229, 117, 107, 0.15);
 }
 
 /* Reset & base */
@@ -771,157 +766,6 @@ a {
   min-height: 130px;
 }
 
-/* Todo Section */
-.todo-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-8);
-  max-width: 620px;
-}
-
-.todo-form {
-  display: flex;
-  gap: var(--space-4);
-  margin-bottom: var(--space-6);
-}
-
-.todo-input {
-  flex: 1;
-  padding: var(--space-3) var(--space-4);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  font-family: inherit;
-  font-size: var(--text-sm);
-  background: var(--background);
-  color: var(--foreground);
-}
-
-.todo-input:focus {
-  outline: 2px solid var(--primary);
-  border-color: transparent;
-}
-
-.todo-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-}
-
-.todo-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  padding: var(--space-3) var(--space-4);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: var(--background);
-  transition: opacity var(--transition);
-}
-
-.todo-item--done {
-  opacity: 0.55;
-}
-
-.todo-checkbox {
-  width: 22px;
-  height: 22px;
-  border: 2px solid var(--border);
-  border-radius: 7px;
-  background: var(--card);
-  cursor: pointer;
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  transition: background var(--transition), border-color var(--transition);
-}
-
-.todo-checkbox:hover {
-  border-color: var(--primary);
-}
-
-.todo-item--done .todo-checkbox {
-  background: var(--primary);
-  border-color: var(--primary);
-}
-
-.todo-check-icon {
-  width: 14px;
-  height: 14px;
-  color: var(--primary-foreground);
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-
-.todo-item--done .todo-check-icon {
-  opacity: 1;
-}
-
-.todo-label {
-  flex: 1;
-  font-size: var(--text-sm);
-  color: var(--foreground);
-  cursor: pointer;
-}
-
-.todo-item--done .todo-label {
-  text-decoration: line-through;
-  color: var(--muted);
-}
-
-.todo-remove {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--muted);
-  font-size: var(--text-xl);
-  line-height: 1;
-  padding: var(--space-2);
-  border-radius: var(--radius-sm);
-  transition: color var(--transition), background var(--transition);
-  flex-shrink: 0;
-}
-
-.todo-remove:hover {
-  color: var(--danger);
-  background: var(--danger-soft);
-}
-
-.todo-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: var(--space-6);
-  padding-top: var(--space-4);
-  border-top: 1px solid var(--border);
-  font-size: var(--text-sm);
-  color: var(--muted);
-}
-
-.todo-clear {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--primary);
-  font-weight: 600;
-  font-size: var(--text-sm);
-  transition: color var(--transition);
-}
-
-.todo-clear:hover {
-  color: var(--primary-dark);
-}
-
-.todo-empty {
-  text-align: center;
-  padding: var(--space-8);
-  color: var(--muted);
-  font-size: var(--text-sm);
-}
-
 /* Footer */
 .site-footer {
   margin-top: auto;
@@ -1047,7 +891,6 @@ a {
 .text-5xl { font-size: var(--text-5xl); }
 .text-muted-foreground { color: var(--muted); }
 .text-primary-dark { color: var(--primary-dark); }
-.text-danger { color: var(--danger); }
 .font-sans { font-family: var(--font-sans); }
 .font-serif { font-family: var(--font-serif); }
 .font-normal { font-weight: 400; }
@@ -1064,7 +907,6 @@ a {
 .bg-muted { background: var(--muted); }
 .bg-border { background: var(--border); }
 .bg-footer { background: var(--footer-bg); }
-.bg-danger { background: var(--danger); }
 .text-primary { color: var(--primary); }
 .text-foreground { color: var(--foreground); }
 .rounded-sm { border-radius: var(--radius-sm); }
