@@ -182,7 +182,6 @@ setThemeToggle();
 
 // ToDo
 function toDo() {
-  console.log('test');
   const STORAGE_KEY = "klar-todo-items";
   const listEl = document.querySelector("[data-todo-list]");
   const formEl = document.querySelector("[data-todo-form]");
@@ -191,6 +190,10 @@ function toDo() {
   const footerEl = document.querySelector("[data-todo-footer]");
   const countEl = document.querySelector("[data-todo-count]");
   const clearEl = document.querySelector("[data-todo-clear]");
+
+  if (!listEl) {
+    return;
+  }
 
   let items = [];
 
