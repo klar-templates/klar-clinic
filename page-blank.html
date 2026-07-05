@@ -84,6 +84,29 @@
         </div>
       </section>
 <section class="todo-section">
+            <div class="todo-section__container">
+              <div class="todo-section__head">
+                <span class="eyebrow">Checklista</span>
+                <h2>Din att-göra-lista</h2>
+                <p>Håll koll på dina uppgifter och kom ihåg vad som behöver göras. Listan sparas i din webbläsare.</p>
+              </div>
+              <div class="todo-section__card">
+                <form class="todo-section__form" data-todo-form="">
+                  <input type="text" class="todo-section__input" placeholder="Lägg till en uppgift…" data-todo-input="" aria-label="Ny uppgift">
+                  <button type="submit" class="btn btn-primary">Lägg till</button>
+                </form>
+                <ul class="todo-section__list" data-todo-list=""></ul>
+                <div class="todo-section__empty" data-todo-empty="" style="display: block;">
+                  Inga uppgifter än. Lägg till din första ovan!
+                </div>
+                <div class="todo-section__footer" data-todo-footer="" style="display:none;">
+                  <span data-todo-count="">0 återstående</span>
+                  <button type="button" class="todo-section__clear" data-todo-clear="">Ta bort avklarade</button>
+                </div>
+              </div>
+            </div>
+          </section>
+<section class="todo-section">
   <style>
     .todo-section {
       padding: var(--space-16) 0;
