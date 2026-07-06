@@ -38,6 +38,7 @@ function spa(container) {
     }
   
     app.innerHTML = root.innerHTML;
+    reloadScripts(app);
   
     setActive();
   
@@ -132,6 +133,20 @@ function spa(container) {
     return;
     document.querySelectorAll("a").forEach((a) => {
       a.classList.toggle("active", a.pathname === location.pathname);
+    });
+  }
+
+  function reloadScripts(root) {
+    root.querySelectorAll('script').forEach((old) => {
+      const fresh = document.createElement('script');
+      // Copy all attributes (src, type="module", async, defer, etc.)
+      for (const { name, value } of old.attributes) {
+        fresh.setAttribute(name, value);
+      }
+      // Copy inline code
+      fresh.textContent = old.textContent;
+      // Replacing the node forces the browser to execute it
+      old.parentNode.replaceChild(fresh, old);
     });
   }
 }
