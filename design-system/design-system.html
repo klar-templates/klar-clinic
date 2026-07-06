@@ -656,7 +656,8 @@
               </div>
               <div class="todo-section__card">
                 <form class="todo-section__form" data-todo-form="">
-                  <input type="text" class="todo-section__input" placeholder="Lägg till en uppgift…" data-todo-input="" aria-label="Ny uppgift">
+                  <input type="text" class="todo-section__input" placeholder="Lägg till en uppgift…" data-todo-input=""
+                    aria-label="Ny uppgift">
                   <button type="submit" class="btn btn-primary">Lägg till</button>
                 </form>
                 <ul class="todo-section__list" data-todo-list=""></ul>
@@ -669,6 +670,141 @@
                 </div>
               </div>
             </div>
+            <script>
+              // ToDo
+              function toDo() {
+                const STORAGE_KEY = "klar-todo-items";
+                const listEl = document.querySelector("[data-todo-list]");
+                const formEl = document.querySelector("[data-todo-form]");
+                const inputEl = document.querySelector("[data-todo-input]");
+                const emptyEl = document.querySelector("[data-todo-empty]");
+                const footerEl = document.querySelector("[data-todo-footer]");
+                const countEl = document.querySelector("[data-todo-count]");
+                const clearEl = document.querySelector("[data-todo-clear]");
+              
+                if (!listEl) {
+                  return;
+                }
+              
+                let items = [];
+              
+                try {
+                  const stored = localStorage.getItem(STORAGE_KEY);
+                  if (stored) items = JSON.parse(stored);
+                } catch (e) {
+                  items = [];
+                }
+              
+                function save() {
+                  try {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+                  } catch (e) {}
+                }
+              
+                function render() {
+                  listEl.innerHTML = "";
+              
+                  if (items.length === 0) {
+                    emptyEl.style.display = "block";
+                    footerEl.style.display = "none";
+                    return;
+                  }
+              
+                  emptyEl.style.display = "none";
+                  footerEl.style.display = "flex";
+              
+                  const remaining = items.filter((i) => !i.done).length;
+                  countEl.textContent = remaining + " återstående";
+              
+                  items.forEach((item, index) => {
+                    const li = document.createElement("li");
+                    li.className = "todo-section__item" + (item.done ? " todo-section__item--done" : "");
+              
+                    li.innerHTML =
+                      '<div class="todo-section__checkbox" data-todo-toggle="' + index +
+                      '" role="checkbox" tabindex="0" aria-checked="' + item.done + '">' +
+                      '<svg class="todo-section__check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' +
+                      "</div>" +
+                      '<span class="todo-section__label" data-todo-toggle="' + index + '">' + escapeHtml(item.text) +
+                      "</span>" +
+                      '<button class="todo-section__remove" data-todo-remove="' + index +
+                      '" aria-label="Ta bort uppgift" title="Ta bort">✕</button>';
+              
+                    listEl.appendChild(li);
+                  });
+                }
+              
+                function escapeHtml(str) {
+                  const div = document.createElement("div");
+                  div.textContent = str;
+                  return div.innerHTML;
+                }
+              
+                function addItem(text) {
+                  text = text.trim();
+                  if (!text) return;
+                  items.push({
+                    text: text,
+                    done: false
+                  });
+                  save();
+                  render();
+                }
+              
+                function toggleItem(index) {
+                  if (items[index]) {
+                    items[index].done = !items[index].done;
+                    save();
+                    render();
+                  }
+                }
+              
+                function removeItem(index) {
+                  items.splice(index, 1);
+                  save();
+                  render();
+                }
+              
+                function clearDone() {
+                  items = items.filter(function(i) {
+                    return !i.done;
+                  });
+                  save();
+                  render();
+                }
+              
+                formEl.addEventListener("submit", function(e) {
+                  e.preventDefault();
+                  addItem(inputEl.value);
+                  inputEl.value = "";
+                });
+              
+                listEl.addEventListener("click", function(e) {
+                  const toggleEl = e.target.closest("[data-todo-toggle]");
+                  const removeEl = e.target.closest("[data-todo-remove]");
+                  if (toggleEl) {
+                    toggleItem(parseInt(toggleEl.dataset.todoToggle, 10));
+                  } else if (removeEl) {
+                    removeItem(parseInt(removeEl.dataset.todoRemove, 10));
+                  }
+                });
+              
+                listEl.addEventListener("keydown", function(e) {
+                  if (e.key === "Enter" || e.key === " ") {
+                    const toggleEl = e.target.closest("[data-todo-toggle]");
+                    if (toggleEl) {
+                      e.preventDefault();
+                      toggleItem(parseInt(toggleEl.dataset.todoToggle, 10));
+                    }
+                  }
+                });
+              
+                clearEl.addEventListener("click", clearDone);
+              
+                render();
+              }
+              toDo();
+            </script>
           </section>
 
           <section class="section" data-klar-ds-label="Contact">
@@ -765,141 +901,521 @@
     <script type="application/json" data-klar-ds>
       {
         "classes": {
-          "Utilities": [
-            { "label": "Flex", "value": "flex" },
-            { "label": "Column", "value": "flex-col" },
-            { "label": "Items center", "value": "items-center" },
-            { "label": "Justify center", "value": "justify-center" },
-            { "label": "Justify between", "value": "justify-between" },
-            { "label": "Gap 1", "value": "gap-1" },
-            { "label": "Gap 2", "value": "gap-2" },
-            { "label": "Gap 3", "value": "gap-3" },
-            { "label": "Gap 4", "value": "gap-4" },
-            { "label": "Gap 5", "value": "gap-5" },
-            { "label": "Gap 6", "value": "gap-6" },
-            { "label": "Gap 8", "value": "gap-8" },
-            { "label": "Gap 12", "value": "gap-12" },
-            { "label": "Grid", "value": "grid" },
-            { "label": "Columns 2", "value": "grid-cols-2" },
-            { "label": "Columns 3", "value": "grid-cols-3" },
-            { "label": "Columns 4", "value": "grid-cols-4" },
-            { "label": "Vertical 3", "value": "py-3" },
-            { "label": "Vertical 8", "value": "py-8" },
-            { "label": "Vertical 12", "value": "py-12" },
-            { "label": "Vertical 16", "value": "py-16" },
-            { "label": "Vertical 20", "value": "py-20" },
-            { "label": "Top 20", "value": "pt-20" },
-            { "label": "Bottom 12", "value": "pb-12" },
-            { "label": "Padding 1", "value": "p-1" },
-            { "label": "Padding 3", "value": "p-3" },
-            { "label": "Padding 6", "value": "p-6" },
-            { "label": "Padding 8", "value": "p-8" },
-            { "label": "Horizontal 3", "value": "px-3" },
-            { "label": "Horizontal 5", "value": "px-5" },
-            { "label": "Horizontal 6", "value": "px-6" },
-            { "label": "Horizontal 7", "value": "px-7" },
-            { "label": "Horizontal 12", "value": "px-12" },
-            { "label": "Top 8", "value": "mt-8" },
-            { "label": "Bottom 8", "value": "mb-8" },
-            { "label": "Center horizontal", "value": "mx-auto" },
-            { "label": "Align center", "value": "text-center" },
-            { "label": "XS", "value": "text-xs" },
-            { "label": "Small", "value": "text-sm" },
-            { "label": "Base", "value": "text-base" },
-            { "label": "Medium", "value": "text-md" },
-            { "label": "Large", "value": "text-lg" },
-            { "label": "XL", "value": "text-xl" },
-            { "label": "2XL", "value": "text-2xl" },
-            { "label": "3XL", "value": "text-3xl" },
-            { "label": "4XL", "value": "text-4xl" },
-            { "label": "5XL", "value": "text-5xl" },
-            { "label": "Hero H1", "value": "text-hero-h1" },
-            { "label": "Section H2", "value": "text-section-h2" },
-            { "label": "CTA H2", "value": "text-cta-h2" },
-            { "label": "Pagehead H1", "value": "text-pagehead-h1" },
-            { "label": "About H2", "value": "text-about-h2" },
-            { "label": "Muted", "value": "text-muted-foreground" },
-            { "label": "Primary", "value": "text-primary" },
-            { "label": "Primary dark", "value": "text-primary-dark" },
-            { "label": "Primary foreground soft", "value": "text-primary-foreground-soft" },
-            { "label": "Danger", "value": "text-danger" },
-            { "label": "Sans font", "value": "font-sans" },
-            { "label": "Serif font", "value": "font-serif" },
-            { "label": "Mono font", "value": "font-mono" },
-            { "label": "Normal", "value": "font-normal" },
-            { "label": "Medium", "value": "font-medium" },
-            { "label": "Semibold", "value": "font-semibold" },
-            { "label": "Bold", "value": "font-bold" },
-            { "label": "Tight", "value": "leading-tight" },
-            { "label": "Uppercase", "value": "uppercase" },
-            { "label": "Tracking wider", "value": "tracking-wider" },
-            { "label": "Tracking widest", "value": "tracking-widest" },
-            { "label": "Background", "value": "bg-background" },
-            { "label": "Foreground", "value": "bg-foreground" },
-            { "label": "Primary", "value": "bg-primary" },
-            { "label": "Primary dark", "value": "bg-primary-dark" },
-            { "label": "Card surface", "value": "bg-card" },
-            { "label": "Accent", "value": "bg-accent" },
-            { "label": "Muted soft", "value": "bg-muted-soft" },
-            { "label": "Muted", "value": "bg-muted" },
-            { "label": "Border", "value": "bg-border" },
-            { "label": "Footer", "value": "bg-footer" },
-            { "label": "Danger", "value": "bg-danger" },
-            { "label": "White", "value": "bg-white" },
-            { "label": "White hover", "value": "bg-white-hover" },
-            { "label": "Body", "value": "text-foreground" },
-            { "label": "Extra small radius", "value": "rounded-xs" },
-            { "label": "Small radius", "value": "rounded-sm" },
-            { "label": "Medium radius", "value": "rounded-md" },
-            { "label": "Rounded", "value": "rounded-lg" },
-            { "label": "Full", "value": "rounded-full" },
-            { "label": "Shadow", "value": "shadow-md" },
-            { "label": "Border", "value": "border" },
-            { "label": "Footer border", "value": "border-footer" },
-            { "label": "Hidden", "value": "hidden" },
-            { "label": "Prose", "value": "prose" },
-            { "label": "Container", "value": "container" },
-            { "label": "Width 5", "value": "w-5" },
-            { "label": "Height 5", "value": "h-5" },
-            { "label": "Width 10", "value": "w-10" },
-            { "label": "Height 10", "value": "h-10" },
-            { "label": "Min height 32", "value": "min-h-32" },
-            { "label": "Aspect 4:5", "value": "aspect-4-5" },
-            { "label": "Aspect 16:11", "value": "aspect-16-11" },
-            { "label": "Aspect 16:10", "value": "aspect-16-10" },
-            { "label": "Aspect 5:6", "value": "aspect-5-6" },
-            { "label": "Aspect 1:1", "value": "aspect-1" },
-            { "label": "Max width prose", "value": "max-w-prose" },
-            { "label": "Max width hero intro", "value": "max-w-hero-intro" },
-            { "label": "Max width section head", "value": "max-w-section-head" },
-            { "label": "Max width cta", "value": "max-w-cta" },
-            { "label": "Max width footer text", "value": "max-w-footer-text" },
-            { "label": "Columns 2", "value": "md:grid-cols-2" },
-            { "label": "Columns 3", "value": "md:grid-cols-3" },
-            { "label": "Columns 4", "value": "md:grid-cols-4" },
-            { "label": "Flex", "value": "md:flex" },
-            { "label": "Hidden", "value": "md:hidden" }
+          "Utilities": [{
+              "label": "Flex",
+              "value": "flex"
+            },
+            {
+              "label": "Column",
+              "value": "flex-col"
+            },
+            {
+              "label": "Items center",
+              "value": "items-center"
+            },
+            {
+              "label": "Justify center",
+              "value": "justify-center"
+            },
+            {
+              "label": "Justify between",
+              "value": "justify-between"
+            },
+            {
+              "label": "Gap 1",
+              "value": "gap-1"
+            },
+            {
+              "label": "Gap 2",
+              "value": "gap-2"
+            },
+            {
+              "label": "Gap 3",
+              "value": "gap-3"
+            },
+            {
+              "label": "Gap 4",
+              "value": "gap-4"
+            },
+            {
+              "label": "Gap 5",
+              "value": "gap-5"
+            },
+            {
+              "label": "Gap 6",
+              "value": "gap-6"
+            },
+            {
+              "label": "Gap 8",
+              "value": "gap-8"
+            },
+            {
+              "label": "Gap 12",
+              "value": "gap-12"
+            },
+            {
+              "label": "Grid",
+              "value": "grid"
+            },
+            {
+              "label": "Columns 2",
+              "value": "grid-cols-2"
+            },
+            {
+              "label": "Columns 3",
+              "value": "grid-cols-3"
+            },
+            {
+              "label": "Columns 4",
+              "value": "grid-cols-4"
+            },
+            {
+              "label": "Vertical 3",
+              "value": "py-3"
+            },
+            {
+              "label": "Vertical 8",
+              "value": "py-8"
+            },
+            {
+              "label": "Vertical 12",
+              "value": "py-12"
+            },
+            {
+              "label": "Vertical 16",
+              "value": "py-16"
+            },
+            {
+              "label": "Vertical 20",
+              "value": "py-20"
+            },
+            {
+              "label": "Top 20",
+              "value": "pt-20"
+            },
+            {
+              "label": "Bottom 12",
+              "value": "pb-12"
+            },
+            {
+              "label": "Padding 1",
+              "value": "p-1"
+            },
+            {
+              "label": "Padding 3",
+              "value": "p-3"
+            },
+            {
+              "label": "Padding 6",
+              "value": "p-6"
+            },
+            {
+              "label": "Padding 8",
+              "value": "p-8"
+            },
+            {
+              "label": "Horizontal 3",
+              "value": "px-3"
+            },
+            {
+              "label": "Horizontal 5",
+              "value": "px-5"
+            },
+            {
+              "label": "Horizontal 6",
+              "value": "px-6"
+            },
+            {
+              "label": "Horizontal 7",
+              "value": "px-7"
+            },
+            {
+              "label": "Horizontal 12",
+              "value": "px-12"
+            },
+            {
+              "label": "Top 8",
+              "value": "mt-8"
+            },
+            {
+              "label": "Bottom 8",
+              "value": "mb-8"
+            },
+            {
+              "label": "Center horizontal",
+              "value": "mx-auto"
+            },
+            {
+              "label": "Align center",
+              "value": "text-center"
+            },
+            {
+              "label": "XS",
+              "value": "text-xs"
+            },
+            {
+              "label": "Small",
+              "value": "text-sm"
+            },
+            {
+              "label": "Base",
+              "value": "text-base"
+            },
+            {
+              "label": "Medium",
+              "value": "text-md"
+            },
+            {
+              "label": "Large",
+              "value": "text-lg"
+            },
+            {
+              "label": "XL",
+              "value": "text-xl"
+            },
+            {
+              "label": "2XL",
+              "value": "text-2xl"
+            },
+            {
+              "label": "3XL",
+              "value": "text-3xl"
+            },
+            {
+              "label": "4XL",
+              "value": "text-4xl"
+            },
+            {
+              "label": "5XL",
+              "value": "text-5xl"
+            },
+            {
+              "label": "Hero H1",
+              "value": "text-hero-h1"
+            },
+            {
+              "label": "Section H2",
+              "value": "text-section-h2"
+            },
+            {
+              "label": "CTA H2",
+              "value": "text-cta-h2"
+            },
+            {
+              "label": "Pagehead H1",
+              "value": "text-pagehead-h1"
+            },
+            {
+              "label": "About H2",
+              "value": "text-about-h2"
+            },
+            {
+              "label": "Muted",
+              "value": "text-muted-foreground"
+            },
+            {
+              "label": "Primary",
+              "value": "text-primary"
+            },
+            {
+              "label": "Primary dark",
+              "value": "text-primary-dark"
+            },
+            {
+              "label": "Primary foreground soft",
+              "value": "text-primary-foreground-soft"
+            },
+            {
+              "label": "Danger",
+              "value": "text-danger"
+            },
+            {
+              "label": "Sans font",
+              "value": "font-sans"
+            },
+            {
+              "label": "Serif font",
+              "value": "font-serif"
+            },
+            {
+              "label": "Mono font",
+              "value": "font-mono"
+            },
+            {
+              "label": "Normal",
+              "value": "font-normal"
+            },
+            {
+              "label": "Medium",
+              "value": "font-medium"
+            },
+            {
+              "label": "Semibold",
+              "value": "font-semibold"
+            },
+            {
+              "label": "Bold",
+              "value": "font-bold"
+            },
+            {
+              "label": "Tight",
+              "value": "leading-tight"
+            },
+            {
+              "label": "Uppercase",
+              "value": "uppercase"
+            },
+            {
+              "label": "Tracking wider",
+              "value": "tracking-wider"
+            },
+            {
+              "label": "Tracking widest",
+              "value": "tracking-widest"
+            },
+            {
+              "label": "Background",
+              "value": "bg-background"
+            },
+            {
+              "label": "Foreground",
+              "value": "bg-foreground"
+            },
+            {
+              "label": "Primary",
+              "value": "bg-primary"
+            },
+            {
+              "label": "Primary dark",
+              "value": "bg-primary-dark"
+            },
+            {
+              "label": "Card surface",
+              "value": "bg-card"
+            },
+            {
+              "label": "Accent",
+              "value": "bg-accent"
+            },
+            {
+              "label": "Muted soft",
+              "value": "bg-muted-soft"
+            },
+            {
+              "label": "Muted",
+              "value": "bg-muted"
+            },
+            {
+              "label": "Border",
+              "value": "bg-border"
+            },
+            {
+              "label": "Footer",
+              "value": "bg-footer"
+            },
+            {
+              "label": "Danger",
+              "value": "bg-danger"
+            },
+            {
+              "label": "White",
+              "value": "bg-white"
+            },
+            {
+              "label": "White hover",
+              "value": "bg-white-hover"
+            },
+            {
+              "label": "Body",
+              "value": "text-foreground"
+            },
+            {
+              "label": "Extra small radius",
+              "value": "rounded-xs"
+            },
+            {
+              "label": "Small radius",
+              "value": "rounded-sm"
+            },
+            {
+              "label": "Medium radius",
+              "value": "rounded-md"
+            },
+            {
+              "label": "Rounded",
+              "value": "rounded-lg"
+            },
+            {
+              "label": "Full",
+              "value": "rounded-full"
+            },
+            {
+              "label": "Shadow",
+              "value": "shadow-md"
+            },
+            {
+              "label": "Border",
+              "value": "border"
+            },
+            {
+              "label": "Footer border",
+              "value": "border-footer"
+            },
+            {
+              "label": "Hidden",
+              "value": "hidden"
+            },
+            {
+              "label": "Prose",
+              "value": "prose"
+            },
+            {
+              "label": "Container",
+              "value": "container"
+            },
+            {
+              "label": "Width 5",
+              "value": "w-5"
+            },
+            {
+              "label": "Height 5",
+              "value": "h-5"
+            },
+            {
+              "label": "Width 10",
+              "value": "w-10"
+            },
+            {
+              "label": "Height 10",
+              "value": "h-10"
+            },
+            {
+              "label": "Min height 32",
+              "value": "min-h-32"
+            },
+            {
+              "label": "Aspect 4:5",
+              "value": "aspect-4-5"
+            },
+            {
+              "label": "Aspect 16:11",
+              "value": "aspect-16-11"
+            },
+            {
+              "label": "Aspect 16:10",
+              "value": "aspect-16-10"
+            },
+            {
+              "label": "Aspect 5:6",
+              "value": "aspect-5-6"
+            },
+            {
+              "label": "Aspect 1:1",
+              "value": "aspect-1"
+            },
+            {
+              "label": "Max width prose",
+              "value": "max-w-prose"
+            },
+            {
+              "label": "Max width hero intro",
+              "value": "max-w-hero-intro"
+            },
+            {
+              "label": "Max width section head",
+              "value": "max-w-section-head"
+            },
+            {
+              "label": "Max width cta",
+              "value": "max-w-cta"
+            },
+            {
+              "label": "Max width footer text",
+              "value": "max-w-footer-text"
+            },
+            {
+              "label": "Columns 2",
+              "value": "md:grid-cols-2"
+            },
+            {
+              "label": "Columns 3",
+              "value": "md:grid-cols-3"
+            },
+            {
+              "label": "Columns 4",
+              "value": "md:grid-cols-4"
+            },
+            {
+              "label": "Flex",
+              "value": "md:flex"
+            },
+            {
+              "label": "Hidden",
+              "value": "md:hidden"
+            }
           ],
-          "Typography": [
-            { "label": "Display", "value": "font-serif text-5xl font-medium leading-tight" },
-            { "label": "Heading 1", "value": "font-serif text-4xl font-medium leading-tight" },
-            { "label": "Heading 2", "value": "font-serif text-3xl font-medium leading-tight" },
-            { "label": "Heading 3", "value": "font-serif text-2xl font-medium leading-tight" },
-            { "label": "Heading 4", "value": "font-serif text-lg font-semibold leading-tight" },
-            { "label": "Lead", "value": "font-sans text-lg font-normal" },
-            { "label": "Body", "value": "font-sans text-base font-normal" },
-            { "label": "Small", "value": "font-sans text-sm font-normal" },
-            { "label": "Meta", "value": "font-sans text-sm font-semibold uppercase tracking-widest" }
+          "Typography": [{
+              "label": "Display",
+              "value": "font-serif text-5xl font-medium leading-tight"
+            },
+            {
+              "label": "Heading 1",
+              "value": "font-serif text-4xl font-medium leading-tight"
+            },
+            {
+              "label": "Heading 2",
+              "value": "font-serif text-3xl font-medium leading-tight"
+            },
+            {
+              "label": "Heading 3",
+              "value": "font-serif text-2xl font-medium leading-tight"
+            },
+            {
+              "label": "Heading 4",
+              "value": "font-serif text-lg font-semibold leading-tight"
+            },
+            {
+              "label": "Lead",
+              "value": "font-sans text-lg font-normal"
+            },
+            {
+              "label": "Body",
+              "value": "font-sans text-base font-normal"
+            },
+            {
+              "label": "Small",
+              "value": "font-sans text-sm font-normal"
+            },
+            {
+              "label": "Meta",
+              "value": "font-sans text-sm font-semibold uppercase tracking-widest"
+            }
           ],
-          "Grid": [
-            { "label": "2 columns", "value": "grid grid-cols-2" },
-            { "label": "3 columns", "value": "grid grid-cols-3" },
-            { "label": "4 columns", "value": "grid grid-cols-4" }
+          "Grid": [{
+              "label": "2 columns",
+              "value": "grid grid-cols-2"
+            },
+            {
+              "label": "3 columns",
+              "value": "grid grid-cols-3"
+            },
+            {
+              "label": "4 columns",
+              "value": "grid grid-cols-4"
+            }
           ],
-          "Container and Grid": [
-            { "label": "Default · 2 cols", "value": "container grid grid-cols-2" },
-            { "label": "Default · 3 cols", "value": "container grid grid-cols-3" },
-            { "label": "Default · 4 cols", "value": "container grid grid-cols-4" }
+          "Container and Grid": [{
+              "label": "Default · 2 cols",
+              "value": "container grid grid-cols-2"
+            },
+            {
+              "label": "Default · 3 cols",
+              "value": "container grid grid-cols-3"
+            },
+            {
+              "label": "Default · 4 cols",
+              "value": "container grid grid-cols-4"
+            }
           ]
         }
       }
