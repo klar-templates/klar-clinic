@@ -9,7 +9,9 @@ function spa(container) {
       return cache.get(path);
     }
   
-    const promise = fetch(path).then(async (response) => {
+    const promise = fetch(path, {
+  cache: "no-cache"
+}).then(async (response) => {
       if (!response.ok) {
         throw new Error(`${response.status} ${response.statusText}`);
       }
