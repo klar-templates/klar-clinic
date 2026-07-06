@@ -1,4 +1,4 @@
-import { spa } from "https://localhost:5173/sdk/spa.js";
+import { spa } from "http://localhost:5173/sdk/spa.js";
 spa("body");
 
 // Mobile toggle menu button
