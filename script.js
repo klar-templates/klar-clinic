@@ -312,4 +312,3 @@ function toDo() {
 
   render();
 }
-toDo();
