@@ -110,7 +110,7 @@
     },
     {
       "name": "index.html",
-      "editableElements": "body,\nsection:attr(class),\n:is(h1, h2, h3, p, a, img, .eyebrow):attr(class), .vkn-gallery__grid[]",
+      "editableElements": "body,\nsection:attr(class),\n:is(h1, h2, h3, p, a, img, .eyebrow):attr(class)",
       "sharedSections": ".site-header, .site-footer"
     },
     {
