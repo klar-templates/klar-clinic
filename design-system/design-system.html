@@ -680,45 +680,45 @@
                 const footerEl = document.querySelector("[data-todo-footer]");
                 const countEl = document.querySelector("[data-todo-count]");
                 const clearEl = document.querySelector("[data-todo-clear]");
-    
+
                 if (!listEl) {
                   return;
                 }
-    
+
                 let items = [];
-    
+
                 try {
                   const stored = localStorage.getItem(STORAGE_KEY);
                   if (stored) items = JSON.parse(stored);
                 } catch (e) {
                   items = [];
                 }
-    
+
                 function save() {
                   try {
                     localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
                   } catch (e) {}
                 }
-    
+
                 function render() {
                   listEl.innerHTML = "";
-    
+
                   if (items.length === 0) {
                     emptyEl.style.display = "block";
                     footerEl.style.display = "none";
                     return;
                   }
-    
+
                   emptyEl.style.display = "none";
                   footerEl.style.display = "flex";
-    
+
                   const remaining = items.filter((i) => !i.done).length;
                   countEl.textContent = remaining + " återstående";
-    
+
                   items.forEach((item, index) => {
                     const li = document.createElement("li");
                     li.className = "todo-section__item" + (item.done ? " todo-section__item--done" : "");
-    
+
                     li.innerHTML =
                       '<div class="todo-section__checkbox" data-todo-toggle="' + index +
                       '" role="checkbox" tabindex="0" aria-checked="' + item.done + '">' +
@@ -729,17 +729,17 @@
                       "</span>" +
                       '<button class="todo-section__remove" data-todo-remove="' + index +
                       '" aria-label="Ta bort uppgift" title="Ta bort">✕</button>';
-    
+
                     listEl.appendChild(li);
                   });
                 }
-    
+
                 function escapeHtml(str) {
                   const div = document.createElement("div");
                   div.textContent = str;
                   return div.innerHTML;
                 }
-    
+
                 function addItem(text) {
                   text = text.trim();
                   if (!text) return;
@@ -750,7 +750,7 @@
                   save();
                   render();
                 }
-    
+
                 function toggleItem(index) {
                   if (items[index]) {
                     items[index].done = !items[index].done;
@@ -758,13 +758,13 @@
                     render();
                   }
                 }
-    
+
                 function removeItem(index) {
                   items.splice(index, 1);
                   save();
                   render();
                 }
-    
+
                 function clearDone() {
                   items = items.filter(function(i) {
                     return !i.done;
@@ -772,13 +772,13 @@
                   save();
                   render();
                 }
-    
+
                 formEl.addEventListener("submit", function(e) {
                   e.preventDefault();
                   addItem(inputEl.value);
                   inputEl.value = "";
                 });
-    
+
                 listEl.addEventListener("click", function(e) {
                   const toggleEl = e.target.closest("[data-todo-toggle]");
                   const removeEl = e.target.closest("[data-todo-remove]");
@@ -788,7 +788,7 @@
                     removeItem(parseInt(removeEl.dataset.todoRemove, 10));
                   }
                 });
-    
+
                 listEl.addEventListener("keydown", function(e) {
                   if (e.key === "Enter" || e.key === " ") {
                     const toggleEl = e.target.closest("[data-todo-toggle]");
@@ -798,11 +798,11 @@
                     }
                   }
                 });
-    
+
                 clearEl.addEventListener("click", clearDone);
-    
+
                 render();
-              })();
+              })()
             </script>
           </section>
 
