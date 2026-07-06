@@ -7,8 +7,10 @@
 
     <!-- Fonts present at first paint → no flicker. Preload URL must match the
        @font-face src exactly (both crossorigin) or the browser fetches twice. -->
-    <link rel="preload" as="font" type="font/woff2" crossorigin="" href="https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin="" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin=""
+      href="https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin=""
+      href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2">
     <style>
       /* Fraunces — variable file, one latin subset covers 400–600 */
       @font-face {
@@ -41,13 +43,14 @@
         <a class="brand" href="/"><span class="brand__mark">✚</span> Vårdkliniken Norden</a>
         <button class="vkn-burger" aria-label="Meny">☰</button>
         <nav class="vkn-nav"><a class="nav-link" href="/">Hem</a>
-<a class="nav-link" href="/behandlingar">Behandlingar</a>
-<a class="nav-link" href="/om-oss">Om oss</a>
-<a class="nav-link" href="/events">Events</a>
-<a class="nav-link" href="/kontakt">Kontakt</a>
-<a class="nav__cta" href="/kontakt">Boka tid</a>
-<button class="theme-toggle" aria-label="Växla tema" title="Växla ljus/mörkt tema">
-            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <a class="nav-link" href="/behandlingar">Behandlingar</a>
+          <a class="nav-link" href="/om-oss">Om oss</a>
+          <a class="nav-link" href="/events">Events</a>
+          <a class="nav-link" href="/kontakt">Kontakt</a>
+          <a class="nav__cta" href="/kontakt">Boka tid</a>
+          <button class="theme-toggle" aria-label="Växla tema" title="Växla ljus/mörkt tema">
+            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="5"></circle>
               <line x1="12" y1="1" x2="12" y2="3"></line>
               <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -58,13 +61,16 @@
               <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
               <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
-            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
-          </button></nav>
+          </button>
+        </nav>
       </div>
     </header>
-    <main><section class="hero">
+    <main>
+      <section class="hero">
         <div class="container hero__grid">
           <div>
             <span class="eyebrow">Trygg vård nära dig</span>
@@ -77,168 +83,182 @@
             </div>
           </div>
           <div class="hero__media">
-            <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="Ljus och välkomnande klinikmiljö" class="shadow-md">
+            <img
+              src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+              alt="Ljus och välkomnande klinikmiljö" class="shadow-md">
           </div>
         </div>
       </section>
-<section class="todo-section">
-            <div class="todo-section__container">
-              <div class="todo-section__head">
-                <span class="eyebrow">Checklista</span>
-                <h2>Din att-göra-lista</h2>
-                <p>Håll koll på dina uppgifter och kom ihåg vad som behöver göras. Listan sparas i din webbläsare.</p>
-              </div>
-              <div class="todo-section__card">
-                <form class="todo-section__form" data-todo-form="">
-                  <input type="text" class="todo-section__input" placeholder="Lägg till en uppgift…" data-todo-input="" aria-label="Ny uppgift">
-                  <button type="submit" class="btn btn-primary">Lägg till</button>
-                </form>
-                <ul class="todo-section__list" data-todo-list=""><li class="todo-section__item"><div class="todo-section__checkbox" data-todo-toggle="0" role="checkbox" tabindex="0" aria-checked="false"><svg class="todo-section__check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div><span class="todo-section__label" data-todo-toggle="0">asdf</span><button class="todo-section__remove" data-todo-remove="0" aria-label="Ta bort uppgift" title="Ta bort">✕</button></li></ul>
-                <div class="todo-section__empty" data-todo-empty="" style="display: none;">
-                  Inga uppgifter än. Lägg till din första ovan!
-                </div>
-                <div class="todo-section__footer" data-todo-footer="" style="display: flex;">
-                  <span data-todo-count="">1 återstående</span>
-                  <button type="button" class="todo-section__clear" data-todo-clear="">Ta bort avklarade</button>
-                </div>
-              </div>
+      <section class="todo-section">
+        <div class="todo-section__container">
+          <div class="todo-section__head">
+            <span class="eyebrow">Checklista</span>
+            <h2>Din att-göra-lista</h2>
+            <p>Håll koll på dina uppgifter och kom ihåg vad som behöver göras. Listan sparas i din webbläsare.</p>
+          </div>
+          <div class="todo-section__card">
+            <form class="todo-section__form" data-todo-form="">
+              <input type="text" class="todo-section__input" placeholder="Lägg till en uppgift…" data-todo-input=""
+                aria-label="Ny uppgift">
+              <button type="submit" class="btn btn-primary">Lägg till</button>
+            </form>
+            <ul class="todo-section__list" data-todo-list="">
+              <li class="todo-section__item">
+                <div class="todo-section__checkbox" data-todo-toggle="0" role="checkbox" tabindex="0"
+                  aria-checked="false"><svg class="todo-section__check-icon" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg></div><span class="todo-section__label" data-todo-toggle="0">asdf</span><button
+                  class="todo-section__remove" data-todo-remove="0" aria-label="Ta bort uppgift"
+                  title="Ta bort">✕</button>
+              </li>
+            </ul>
+            <div class="todo-section__empty" data-todo-empty="" style="display: none;">
+              Inga uppgifter än. Lägg till din första ovan!
             </div>
-            <script>
-              // ToDo
-              (function() {
-                const STORAGE_KEY = "klar-todo-items";
-                const listEl = document.querySelector("[data-todo-list]");
-                const formEl = document.querySelector("[data-todo-form]");
-                const inputEl = document.querySelector("[data-todo-input]");
-                const emptyEl = document.querySelector("[data-todo-empty]");
-                const footerEl = document.querySelector("[data-todo-footer]");
-                const countEl = document.querySelector("[data-todo-count]");
-                const clearEl = document.querySelector("[data-todo-clear]");
-    
-                if (!listEl) {
-                  return;
-                }
-    
-                let items = [];
-    
-                try {
-                  const stored = localStorage.getItem(STORAGE_KEY);
-                  if (stored) items = JSON.parse(stored);
-                } catch (e) {
-                  items = [];
-                }
-    
-                function save() {
-                  try {
-                    localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
-                  } catch (e) {}
-                }
-    
-                function render() {
-                  listEl.innerHTML = "";
-    
-                  if (items.length === 0) {
-                    emptyEl.style.display = "block";
-                    footerEl.style.display = "none";
-                    return;
-                  }
-    
-                  emptyEl.style.display = "none";
-                  footerEl.style.display = "flex";
-    
-                  const remaining = items.filter((i) => !i.done).length;
-                  countEl.textContent = remaining + " återstående";
-    
-                  items.forEach((item, index) => {
-                    const li = document.createElement("li");
-                    li.className = "todo-section__item" + (item.done ? " todo-section__item--done" : "");
-    
-                    li.innerHTML =
-                      '<div class="todo-section__checkbox" data-todo-toggle="' + index +
-                      '" role="checkbox" tabindex="0" aria-checked="' + item.done + '">' +
-                      '<svg class="todo-section__check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' +
-                      "</div>" +
-                      '<span class="todo-section__label" data-todo-toggle="' + index + '">' + escapeHtml(item
-                        .text) +
-                      "</span>" +
-                      '<button class="todo-section__remove" data-todo-remove="' + index +
-                      '" aria-label="Ta bort uppgift" title="Ta bort">✕</button>';
-    
-                    listEl.appendChild(li);
-                  });
-                }
-    
-                function escapeHtml(str) {
-                  const div = document.createElement("div");
-                  div.textContent = str;
-                  return div.innerHTML;
-                }
-    
-                function addItem(text) {
-                  text = text.trim();
-                  if (!text) return;
-                  items.push({
-                    text: text,
-                    done: false
-                  });
-                  save();
-                  render();
-                }
-    
-                function toggleItem(index) {
-                  if (items[index]) {
-                    items[index].done = !items[index].done;
-                    save();
-                    render();
-                  }
-                }
-    
-                function removeItem(index) {
-                  items.splice(index, 1);
-                  save();
-                  render();
-                }
-    
-                function clearDone() {
-                  items = items.filter(function(i) {
-                    return !i.done;
-                  });
-                  save();
-                  render();
-                }
-    
-                formEl.addEventListener("submit", function(e) {
-                  e.preventDefault();
-                  addItem(inputEl.value);
-                  inputEl.value = "";
-                });
-    
-                listEl.addEventListener("click", function(e) {
-                  const toggleEl = e.target.closest("[data-todo-toggle]");
-                  const removeEl = e.target.closest("[data-todo-remove]");
-                  if (toggleEl) {
-                    toggleItem(parseInt(toggleEl.dataset.todoToggle, 10));
-                  } else if (removeEl) {
-                    removeItem(parseInt(removeEl.dataset.todoRemove, 10));
-                  }
-                });
-    
-                listEl.addEventListener("keydown", function(e) {
-                  if (e.key === "Enter" || e.key === " ") {
-                    const toggleEl = e.target.closest("[data-todo-toggle]");
-                    if (toggleEl) {
-                      e.preventDefault();
-                      toggleItem(parseInt(toggleEl.dataset.todoToggle, 10));
-                    }
-                  }
-                });
-    
-                clearEl.addEventListener("click", clearDone);
-    
+            <div class="todo-section__footer" data-todo-footer="" style="display: flex;">
+              <span data-todo-count="">1 återstående</span>
+              <button type="button" class="todo-section__clear" data-todo-clear="">Ta bort avklarade</button>
+            </div>
+          </div>
+        </div>
+        <script>
+          // ToDo
+          (function() {
+            const STORAGE_KEY = "klar-todo-items";
+            const listEl = document.querySelector("[data-todo-list]");
+            const formEl = document.querySelector("[data-todo-form]");
+            const inputEl = document.querySelector("[data-todo-input]");
+            const emptyEl = document.querySelector("[data-todo-empty]");
+            const footerEl = document.querySelector("[data-todo-footer]");
+            const countEl = document.querySelector("[data-todo-count]");
+            const clearEl = document.querySelector("[data-todo-clear]");
+
+            if (!listEl) {
+              return;
+            }
+
+            let items = [];
+
+            try {
+              const stored = localStorage.getItem(STORAGE_KEY);
+              if (stored) items = JSON.parse(stored);
+            } catch (e) {
+              items = [];
+            }
+
+            function save() {
+              try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+              } catch (e) {}
+            }
+
+            function render() {
+              listEl.innerHTML = "";
+
+              if (items.length === 0) {
+                emptyEl.style.display = "block";
+                footerEl.style.display = "none";
+                return;
+              }
+
+              emptyEl.style.display = "none";
+              footerEl.style.display = "flex";
+
+              const remaining = items.filter((i) => !i.done).length;
+              countEl.textContent = remaining + " återstående";
+
+              items.forEach((item, index) => {
+                const li = document.createElement("li");
+                li.className = "todo-section__item" + (item.done ? " todo-section__item--done" : "");
+
+                li.innerHTML =
+                  '<div class="todo-section__checkbox" data-todo-toggle="' + index +
+                  '" role="checkbox" tabindex="0" aria-checked="' + item.done + '">' +
+                  '<svg class="todo-section__check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' +
+                  "</div>" +
+                  '<span class="todo-section__label" data-todo-toggle="' + index + '">' + escapeHtml(item
+                    .text) +
+                  "</span>" +
+                  '<button class="todo-section__remove" data-todo-remove="' + index +
+                  '" aria-label="Ta bort uppgift" title="Ta bort">✕</button>';
+
+                listEl.appendChild(li);
+              });
+            }
+
+            function escapeHtml(str) {
+              const div = document.createElement("div");
+              div.textContent = str;
+              return div.innerHTML;
+            }
+
+            function addItem(text) {
+              text = text.trim();
+              if (!text) return;
+              items.push({
+                text: text,
+                done: false
+              });
+              save();
+              render();
+            }
+
+            function toggleItem(index) {
+              if (items[index]) {
+                items[index].done = !items[index].done;
+                save();
                 render();
-              })();
-            </script>
-          </section></main>
+              }
+            }
+
+            function removeItem(index) {
+              items.splice(index, 1);
+              save();
+              render();
+            }
+
+            function clearDone() {
+              items = items.filter(function(i) {
+                return !i.done;
+              });
+              save();
+              render();
+            }
+
+            formEl.addEventListener("submit", function(e) {
+              e.preventDefault();
+              addItem(inputEl.value);
+              inputEl.value = "";
+            });
+
+            listEl.addEventListener("click", function(e) {
+              const toggleEl = e.target.closest("[data-todo-toggle]");
+              const removeEl = e.target.closest("[data-todo-remove]");
+              if (toggleEl) {
+                toggleItem(parseInt(toggleEl.dataset.todoToggle, 10));
+              } else if (removeEl) {
+                removeItem(parseInt(removeEl.dataset.todoRemove, 10));
+              }
+            });
+
+            listEl.addEventListener("keydown", function(e) {
+              if (e.key === "Enter" || e.key === " ") {
+                const toggleEl = e.target.closest("[data-todo-toggle]");
+                if (toggleEl) {
+                  e.preventDefault();
+                  toggleItem(parseInt(toggleEl.dataset.todoToggle, 10));
+                }
+              }
+            });
+
+            clearEl.addEventListener("click", clearDone);
+
+            render();
+          })()
+        </script>
+      </section>
+    </main>
     <footer class="site-footer">
       <div class="container">
         <div class="footer__grid">
