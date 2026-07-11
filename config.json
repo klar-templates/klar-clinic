@@ -110,8 +110,12 @@
     },
     {
       "name": "index.html",
-      "editableElements": "body,\nsection:attr(class),\n:is(h1, h2, h3, p, a, img, .eyebrow):attr(class)",
+      "editableElements": "h1:field(attr:class, options(layout:classes, filters:[]))",
       "sharedSections": ".site-header, .site-footer"
+    },
+    {
+      "name": "om-oss.html",
+      "editableElements": "body,\n.vkn-gallery__item:field(attr:data-full, options(layout:image,cascade:true)),\na:attr:class"
     },
     {
       "name": "page-blank.html",
