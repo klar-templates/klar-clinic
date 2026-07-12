@@ -110,7 +110,6 @@
     },
     {
       "name": "index.html",
-      "editableElements": "h1:field(attr:class, options(layout:classes, filters:[]))",
       "sharedSections": ".site-header, .site-footer"
     },
     {
