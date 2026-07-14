@@ -110,6 +110,7 @@
     },
     {
       "name": "index.html",
+      "editableElements": "section,\n:is(h1,h2,h3,p,a,img)\n:attr(class),",
       "sharedSections": ".site-header, .site-footer"
     },
     {
