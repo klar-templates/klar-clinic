@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="sv">
-  <head>
+<!DOCTYPE html><html lang="sv"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vårdkliniken Norden</title>
@@ -31,21 +29,21 @@
       }
     </style>
 
-    <link rel="stylesheet" href="/style.css">
-    <link rel="icon" href="/images/favicon.png">
-    <script type="module" src="/script.js"></script>
+    <link rel="stylesheet" href="/klar-clinic/style.css">
+    <link rel="icon" href="/klar-clinic/images/favicon.png">
+    <script type="module" src="/klar-clinic/script.js"></script>
   </head>
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="/"><span class="brand__mark">✚</span> Vårdkliniken Norden</a>
+        <a class="brand" href="/klar-clinic/"><span class="brand__mark">✚</span> Vårdkliniken Norden</a>
         <button class="vkn-burger" aria-label="Meny">☰</button>
-        <nav class="vkn-nav"><a class="nav-link" href="/">Hem</a>
-<a class="nav-link" href="/behandlingar">Behandlingar</a>
-<a class="nav-link" href="/om-oss">Om oss</a>
-<a class="nav-link" href="/events">Events</a>
-<a class="nav-link" href="/kontakt">Kontakt</a>
-<a class="nav__cta" href="/kontakt">Boka tid</a>
+        <nav class="vkn-nav"><a class="nav-link" href="/klar-clinic/">Hem</a>
+<a class="nav-link" href="/klar-clinic/behandlingar">Behandlingar</a>
+<a class="nav-link" href="/klar-clinic/om-oss">Om oss</a>
+<a class="nav-link" href="/klar-clinic/events">Events</a>
+<a class="nav-link" href="/klar-clinic/kontakt">Kontakt</a>
+<a class="nav__cta" href="/klar-clinic/kontakt">Boka tid</a>
 <button class="theme-toggle" aria-label="Växla tema" title="Växla ljus/mörkt tema">
             <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="5"></circle>
@@ -76,9 +74,9 @@
               korta väntetider – mitt i centrala Stockholm.
             </p>
             <div class="hero__actions">
-              <a class="btn btn-primary" href="/kontakt" nav-link="1" nav-link1="2" nav-link2="3" style="8">Boka
+              <a class="btn btn-primary" href="/klar-clinic/kontakt" nav-link="1" nav-link1="2" nav-link2="3" style="8">Boka
                 tid</a>
-              <a class="btn btn-outline" href="/behandlingar" nav-link="4" nav-link1="5" nav-link2="6" style="7">Se
+              <a class="btn btn-outline" href="/klar-clinic/behandlingar" nav-link="4" nav-link1="5" nav-link2="6" style="7">Se
                 behandlingar</a>
             </div>
           </div>
@@ -171,7 +169,7 @@
             </article>
           </div>
           <div class="more">
-            <a class="cta-link" href="/behandlingar">Visa alla behandlingar →</a>
+            <a class="cta-link" href="/klar-clinic/behandlingar">Visa alla behandlingar →</a>
           </div>
         </div>
       </section>
@@ -200,7 +198,7 @@
                   <span class="tag tag-muted">18:00–20:30</span>
                   <span class="tag tag-muted">Vårdkliniken Norden, Storgatan 12, Stockholm</span>
                 </div>
-                <a class="cta-link vkn-event-card__link" href="/events/stress-tema.html">Läs mer →</a>
+                <a class="cta-link vkn-event-card__link" href="/klar-clinic/events/stress-tema.html">Läs mer →</a>
               </div>
             </article>
             
@@ -217,7 +215,7 @@
                   <span class="tag tag-muted">18:00–20:30</span>
                   <span class="tag tag-muted">Vårdkliniken Norden, Storgatan 12, Stockholm</span>
                 </div>
-                <a class="cta-link vkn-event-card__link" href="/events/somn-event.html">Läs mer →</a>
+                <a class="cta-link vkn-event-card__link" href="/klar-clinic/events/somn-event.html">Läs mer →</a>
               </div>
             </article>
             
@@ -234,33 +232,12 @@
                   <span class="tag tag-muted">18:00</span>
                   <span class="tag tag-muted">Klinikens lokaler</span>
                 </div>
-                <a class="cta-link vkn-event-card__link" href="/events/angsviks-massan.html">Läs mer →</a>
+                <a class="cta-link vkn-event-card__link" href="/klar-clinic/events/angsviks-massan.html">Läs mer →</a>
               </div>
             </article>
             
           </div>
-          <template data-for="vkn-event-list" data-query="list('event', { order: 'eventDate:asc', limit: 6 })">
-            {% for item in items %}
-            <article class="card vkn-event-card">
-              <div class="card__media">
-                <img src="{{ item.content.image.src  }}" alt="{{ item.content.image.alt  }}">
-              </div>
-              <div class="card__body">
-                <span class="tag vkn-event-card__category">{{ item.content.category  }}</span>
-                <h3>{{ item.content.title }}</h3>
-                <p class="card__desc">{{ item.content.description }}</p>
-                <div class="card__meta">
-                  <span class="tag">{{ item.content.eventDate  }}</span>
-                  <span class="tag tag-muted">{{ item.content.time  }}</span>
-                  <span class="tag tag-muted">{{ item.content.location  }}</span>
-                </div>
-                <a class="cta-link vkn-event-card__link" href="{{ item.url }}">Läs mer →</a>
-              </div>
-            </article>
-            {% else %}
-            <p class="vkn-events__empty">Inga kommande event just nu. Återkom snart!</p>
-            {% endfor %}
-          </template>
+          
         </div>
       </section>
       <section class="section">
@@ -272,7 +249,7 @@
               Vi har korta väntetider och tar emot både nya och återkommande
               patienter.
             </p>
-            <a class="btn btn-primary" href="/kontakt">Boka tid</a>
+            <a class="btn btn-primary" href="/klar-clinic/kontakt">Boka tid</a>
           </div>
         </div>
       </section>
@@ -292,10 +269,10 @@
           <div>
             <h4>Sidor</h4>
             <ul>
-              <li><a href="/">Hem</a></li>
-              <li><a href="/behandlingar">Behandlingar</a></li>
-              <li><a href="/om-oss">Om oss</a></li>
-              <li><a href="/kontakt">Kontakt</a></li>
+              <li><a href="/klar-clinic/">Hem</a></li>
+              <li><a href="/klar-clinic/behandlingar">Behandlingar</a></li>
+              <li><a href="/klar-clinic/om-oss">Om oss</a></li>
+              <li><a href="/klar-clinic/kontakt">Kontakt</a></li>
             </ul>
           </div>
           <div>
@@ -312,5 +289,5 @@
         </div>
       </div>
     </footer>
-  </body>
-</html>
+  
+</body></html>
